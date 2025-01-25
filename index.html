@@ -2,13 +2,13 @@
 <html lang="en">
 
 
-<!-- Mirrored from madebydesignesia.com/themes/autoev/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:52 GMT -->
+<!-- Mirrored from madebydesignesia.com/themes/GideON/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:52 GMT -->
 <head>
-    <title>Autoev — Electric Vehicle Charging EV Dealer Website Template</title>
+    <title>GideON — One App for EV Chargers - Home</title>
     <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Autoev — Electric Vehicle Charging EV Dealer Website Template" name="description" >
+    <meta content="GideON — Electric Vehicle Charging EV Dealer Website Template" name="description" >
     <meta content="" name="keywords" >
     <meta content="" name="author" >
     <!-- CSS Files
@@ -21,162 +21,6 @@
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
     <style>
-        .charger-homescreen{
-            position: relative;
-    left: 12%;
-        }
-        .swiper-inner{
-            background-color:black;
-        }
-
-        /* Enhanced Screen Transitions */
-        .screen {
-            display: none;
-            opacity: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            perspective: 1000px;
-        }
-
-        .screen.active {
-            display: block;
-            opacity: 1;
-            transform: none !important;
-        }
-
-        /* 3D Flip animations */
-        .flip-out-x {
-            transform-origin: center;
-            transform: rotateX(90deg) translateY(100px);
-            opacity: 0;
-        }
-
-        .flip-in-x {
-            animation: flipInX 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        .flip-out-y {
-            transform-origin: center;
-            transform: rotateY(90deg) translateX(-100px);
-            opacity: 0;
-        }
-
-        .flip-in-y {
-            animation: flipInY 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        /* Zoom animations */
-        .zoom-out {
-            transform: scale(1.5);
-            opacity: 0;
-            filter: blur(10px);
-        }
-
-        .zoom-in {
-            animation: zoomIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        /* Rotate animations */
-        .rotate-out {
-            transform: rotate(180deg) scale(0.3);
-            opacity: 0;
-        }
-
-        .rotate-in {
-            animation: rotateIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        /* Bounce animations */
-        .bounce-out {
-            transform: scale(0.3);
-            opacity: 0;
-        }
-
-        .bounce-in {
-            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-        }
-
-        /* Keyframes */
-        @keyframes flipInX {
-            from {
-                transform: rotateX(-90deg) translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: rotateX(0) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes flipInY {
-            from {
-                transform: rotateY(-90deg) translateX(100px);
-                opacity: 0;
-            }
-            to {
-                transform: rotateY(0) translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(1.5);
-                opacity: 0;
-                filter: blur(10px);
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-                filter: blur(0);
-            }
-        }
-
-        @keyframes rotateIn {
-            from {
-                transform: rotate(-180deg) scale(0.3);
-                opacity: 0;
-            }
-            to {
-                transform: rotate(0) scale(1);
-                opacity: 1;
-            }
-        }
-
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0.3);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 0.8;
-            }
-            70% {
-                transform: scale(0.9);
-                opacity: 0.9;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        #mainmenu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #mainmenu li::before {
-            display: none;  /* This removes any generated content that might be adding numbers */
-        }
-
-        #mainmenu li {
-            list-style-type: none;  /* This ensures no numbering appears */
-        }
     </style>
 </head>
 
@@ -243,7 +87,7 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                       <!-- Slides -->
-                      <div class="swiper-slide">
+                      <div class="swiper-slide" style="background: url('images/background/1.webp') 0% 0% / cover no-repeat;">
                         <div class="swiper-inner">
                           <div class="sw-caption">
                             <div class="container">
@@ -285,14 +129,14 @@
                                       </div>
                                     </div>
                                     <div class="spacer-30"></div>
-                                    <a class="btn-main mb10 mb-3" href="features.html">Explore Features</a>
+                                    <a class="btn-main mb10 mb-3" href="#">Explore Features</a>
                                   </div>
                                 </div>
                                 <div class="col-lg-6">
-                                  <div class="slider-extra">
+                                  <div >
                                     <img
                                       class="charger-homescreen"
-                                      width="60%"
+                                      width="50%"
                                       height="auto"
                                       src="./images//screens/homescreen.png"
                                       class="img-fluid"
@@ -319,56 +163,171 @@
                 </div>
               </section>
               
-              <section>
+            <section class="jarallax">
+                <img src="images/background/gradient-2.webp" class="jarallax-img" alt="">
+                <div class="container">
+                    <div class="row g-4 gx-5 align-items-center">
+                        <div class="col-lg-12">
+                            <div class="subtitle bg-color text-light wow fadeInUp mb-3">EV Platform Features</div>
+                            <h2 class="wow fadeInUp">Efficiency & Simplicity</h2>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".0s">
+                                <img src="images/misc/p1.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h5 class="no-bottom text-dark">Real-Time Updates</h5>
+                                <p class="small mb-1 text-dark">Stay informed with real-time charger availability.</p>
+                            </div>
+                            <p>Access live data on charging points to ensure smooth travel with zero hassle.</p>
+                        </div>
+            
+                        <div class="col-lg-3">
+                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".2s">
+                                <img src="images/misc/p2.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h5 class="no-bottom text-dark">Price Comparison</h5>
+                                <p class="small mb-1 text-dark">Compare costs and choose the most economical option.</p>
+                            </div>
+                            <p>We provide transparent pricing for all listed chargers on the platform.</p>
+                        </div>
+            
+                        <div class="col-lg-3">
+                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".4s">
+                                <img src="images/misc/p3.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h5 class="no-bottom text-dark">Interactive Map</h5>
+                                <p class="small mb-1 text-dark">Locate chargers on our intuitive map interface.</p>
+                            </div>
+                            <p>Plan your trips with our detailed map showing station types and features.</p>
+                        </div>
+            
+                        <div class="col-lg-3">
+                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".6s">
+                                <img src="images/misc/p4.webp" class="img-fluid rounded-10 mb-2" alt="">
+                                <h5 class="no-bottom text-dark">Quick Access</h5>
+                                <p class="small mb-1 text-dark">Save your favorite stations for one-click access.</p>
+                            </div>
+                            <p>Make EV charging even faster with personalized shortcuts.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
                 <div class="container">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-8">
-                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Powering the Future</div>
-                            <h2 class="wow fadeInUp">Key Features</h2>
+                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Spark Change</div>
+                            <h2 class="wow fadeInUp">Unified EV Charging Features</h2>
                         </div>
                         <div class="col-lg-4 text-lg-end">
-                            <a class="btn-text text-dark wow fadeInLeft" href="#">Discover All Features</a>
+                            <a class="btn-text text-dark wow fadeInLeft" href="#">Explore All Features</a>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-4 relative wow fadeInRight" data-wow-delay=".3s">
                                 <div class="absolute top-0 end-0">01</div>
-                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-charging-station rounded-10px"></i>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-map rounded-10px"></i>
                                 <div class="pl-90">
-                                    <h4>Fast Charging</h4>
-                                    <p class="mb-0">Experience industry-leading charging speeds across all compatible chargers.</p>
+                                    <h4>Charger Discovery</h4>
+                                    <p class="mb-0">Find EV charging stations near you with real-time availability updates.</p>
                                 </div>
                             </div>
             
                             <div class="mb-4 relative wow fadeInRight" data-wow-delay=".5s">
                                 <div class="absolute top-0 end-0">02</div>
-                                <i class="bg-dark text-light fs-48 p-2 absolute id-color icofont-wallet rounded-10px"></i>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-clock-time rounded-10px"></i>
+                                <div class="pl-90">
+                                    <h4>Booking System</h4>
+                                    <p class="mb-0">Reserve charging slots in advance to avoid waiting in queues.</p>
+                                </div>
+                            </div>
+            
+                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".7s">
+                                <div class="absolute top-0 end-0">03</div>
+                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-wallet rounded-10px"></i>
                                 <div class="pl-90">
                                     <h4>Unified Wallet</h4>
-                                    <p class="mb-0">Simplify payments with one wallet for all charging networks.</p>
+                                    <p class="mb-0">Use a single wallet for payments across all charging networks.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <img src="images/misc/6.webp" class="img-fluid wow scaleIn" alt="EV Charger Dashboard">
+                            <img src="images/misc/charging-station.webp" class="img-fluid wow scaleIn" alt="EV Charger">
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".3s">
-                                <div class="absolute top-0 start-0">03</div>
-                                <i class="bg-color text-light fs-48 p-2 absolute end-0 id-color icofont-leaf rounded-10px"></i>
+                                <div class="absolute top-0 start-0">04</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-price rounded-10px"></i>
                                 <div class="pr-90">
-                                    <h4 class="text-end">Sustainability</h4>
-                                    <p class="text-end mb-0">Drive green with zero-emission charging solutions.</p>
+                                    <h4 class="text-end">Price Comparison</h4>
+                                    <p class="text-end mb-0">Compare prices across multiple providers for cost-effective charging.</p>
                                 </div>
                             </div>
             
                             <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".5s">
-                                <div class="absolute top-0 start-0">04</div>
-                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-globe rounded-10px"></i>
+                                <div class="absolute top-0 start-0">05</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-lightning"></i>
                                 <div class="pr-90">
-                                    <h4 class="text-end">Global Reach</h4>
-                                    <p class="text-end mb-0">Access chargers worldwide through our expansive network.</p>
+                                    <h4 class="text-end">Fast Charging Support</h4>
+                                    <p class="text-end mb-0">Access high-speed chargers for quicker charging times.</p>
                                 </div>
                             </div>
+            
+                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".7s">
+                                <div class="absolute top-0 start-0">06</div>
+                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-shield-alt rounded-10px"></i>
+                                <div class="pr-90">
+                                    <h4 class="text-end">Secure Transactions</h4>
+                                    <p class="text-end mb-0">Enjoy encrypted and secure payment processes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="jarallax">
+                <img src="images/background/gradient-ev.webp" class="jarallax-img" alt="EV Background">
+                <div class="container">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-8">
+                            <div class="subtitle wow fadeInUp mb-3">EV Solutions</div>
+                            <h2 class="wow fadeInUp mb-0">Discover More</h2>
+                        </div>
+                        <div class="col-lg-4 text-lg-end">
+                            <a class="btn-text text-dark wow fadeInLeft" href="#">Explore Features</a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".2s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-map"></i>
+                                <h4 class="absolute abs-middle ml90">Station Map</h4>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".4s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-download-alt"></i>
+                                <h4 class="absolute abs-middle ml90">Download Guide</h4>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".6s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-sale-discount"></i>
+                                <h4 class="absolute abs-middle ml90">Special Offers</h4>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".2s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-location-pin"></i>
+                                <h4 class="absolute abs-middle ml90">Locate Stations</h4>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".4s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-ui-chat"></i>
+                                <h4 class="absolute abs-middle ml90">Get Support</h4>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-6 wow fadeInRight" data-wow-delay=".6s">
+                            <a href="#" class="d-block relative bg-dark text-white p-2 rounded-10px">
+                                <i class="id-color p-3 rounded-10px fs-56 icofont-rocket"></i>
+                                <h4 class="absolute abs-middle ml90">Try Demo</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -466,8 +425,8 @@
                         <div class="col-lg-4 wow fadeInRight" data-wow-delay=".2s">
                             <div class="relative">
                                 <div class="absolute top-0 end-0">01</div>
-                                <a href="chargers.html">
-                                    <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-charging-station"></i>
+                                <a href="#">
+                                    <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 id-color p-3 rounded-10px fs-56 icofont-location-pin"></i>
                                     <h4>Discover EV Chargers</h4>
                                 </a>
                                 <p>Find chargers near you with ease. Our platform aggregates all EV charging stations to provide you with real-time availability and location details.</p>
@@ -476,7 +435,7 @@
                         <div class="col-lg-4 wow fadeInRight" data-wow-delay=".4s">
                             <div class="relative">
                                 <div class="absolute top-0 end-0">02</div>
-                                <a href="schedule.html">
+                                <a href="#">
                                     <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-calendar"></i>
                                     <h4>Book Your Slot</h4>
                                 </a>
@@ -486,7 +445,7 @@
                         <div class="col-lg-4 wow fadeInRight" data-wow-delay=".6s">
                             <div class="relative">
                                 <div class="absolute top-0 end-0">03</div>
-                                <a href="wallet.html">
+                                <a href="#">
                                     <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-wallet"></i>
                                     <h4>Unified Wallet</h4>
                                 </a>
@@ -510,53 +469,6 @@
                     </div>
                 </div>
                 <div class="col-lg-6 absolute h-100 mh-500px top-0 bg-dark" data-bgimage="url(images/background/ev-mobility.webp)">
-                </div>
-            </section>
-            
-            <section class="jarallax">
-                <img src="images/background/gradient-2.webp" class="jarallax-img" alt="">
-                <div class="container">
-                    <div class="row g-4 gx-5 align-items-center">
-                        <div class="col-lg-12">
-                            <div class="subtitle bg-color text-light wow fadeInUp mb-3">EV Platform Features</div>
-                            <h2 class="wow fadeInUp">Efficiency & Simplicity</h2>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".0s">
-                                <img src="images/misc/p1.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Real-Time Updates</h5>
-                                <p class="small mb-1 text-dark">Stay informed with real-time charger availability.</p>
-                            </div>
-                            <p>Access live data on charging points to ensure smooth travel with zero hassle.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".2s">
-                                <img src="images/misc/p2.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Price Comparison</h5>
-                                <p class="small mb-1 text-dark">Compare costs and choose the most economical option.</p>
-                            </div>
-                            <p>We provide transparent pricing for all listed chargers on the platform.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".4s">
-                                <img src="images/misc/p3.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Interactive Map</h5>
-                                <p class="small mb-1 text-dark">Locate chargers on our intuitive map interface.</p>
-                            </div>
-                            <p>Plan your trips with our detailed map showing station types and features.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".6s">
-                                <img src="images/misc/p4.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Quick Access</h5>
-                                <p class="small mb-1 text-dark">Save your favorite stations for one-click access.</p>
-                            </div>
-                            <p>Make EV charging even faster with personalized shortcuts.</p>
-                        </div>
-                    </div>
                 </div>
             </section>
             
@@ -654,7 +566,7 @@
                     <div class="col-lg-4 col-sm-6">
                         <img src="images/logo-white.webp" alt="" >
                         <div class="spacer-20"></div>
-                        <p>Autoev are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency. Our journey towards a cleaner, greener world with electric vehicles leading the way.</p>
+                        <p>GideON are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency. Our journey towards a cleaner, greener world with electric vehicles leading the way.</p>
 
                         <div class="social-icons mb-sm-30">
                             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -671,9 +583,9 @@
                                     <h5>Company</h5>
                                     <ul>                                        
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="history.html">History</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="#">History</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">Careers</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
@@ -682,11 +594,11 @@
                                 <div class="widget">
                                     <h5>Our Products</h5>
                                     <ul>
-                                        <li><a href="vehicle-single-1.html">Autoev R100</a></li>
-                                        <li><a href="vehicle-single-2.html">Autoev R200</a></li>
-                                        <li><a href="vehicle-single-3.html">Autoev R300</a></li>
-                                        <li><a href="vehicles.html">All Vehicles</a></li>
-                                        <li><a href="dealers.html">Dealers</a></li>
+                                        <li><a href="#">GideON R100</a></li>
+                                        <li><a href="#">GideON R200</a></li>
+                                        <li><a href="#">GideON R300</a></li>
+                                        <li><a href="#">All Vehicles</a></li>
+                                        <li><a href="#">Dealers</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -700,7 +612,7 @@
                             <div class="spacer-20"></div>
 
                             <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Send a Message</div>
-                            contact@autoev.com     
+                            contact@GideON.com     
 
                             <div class="spacer-20"></div>
 
@@ -716,7 +628,7 @@
                         <div class="col-md-12">
                             <div class="de-flex">
                                 <div class="de-flex-col">
-                                    Copyright 2025 - Autoev by Designesia
+                                    Copyright 2025 - GideON by Designesia
                                 </div>
                                 <ul class="menu-simple">
                                     <li><a href="#">Terms &amp; Conditions</a></li>
@@ -819,5 +731,5 @@
 </body>
 
 
-<!-- Mirrored from madebydesignesia.com/themes/autoev/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:53 GMT -->
+<!-- Mirrored from madebydesignesia.com/themes/GideON/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:53 GMT -->
 </html>
