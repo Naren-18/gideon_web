@@ -20,13 +20,287 @@
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         .charger-homescreen{
-            position: relative;
-    left: 12%;
+            position: static;
+            left: auto;
         }
         .swiper-inner{
             background-color:black;
+        }
+        .iphone-mockup {
+            position: relative;
+            width: 250px;
+            height: 500px;
+            background: linear-gradient(145deg, #2c2c2c, #1c1c1c);
+            border-radius: 45px;
+            box-shadow: 
+                -3px 3px 15px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(28, 28, 28, 0.6),
+                inset 0 0 3px rgba(255, 255, 255, 0.05);
+            margin: 50px auto;
+            padding: 10px;
+            animation: slideInPhone 3.5s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        @keyframes slideInPhone {
+            0% {
+                transform: translateX(200px) rotateY(360deg) scale(0.7);
+                opacity: 0;
+            }
+            40% {
+                transform: translateX(150px) rotateY(270deg) scale(0.8);
+                opacity: 0.3;
+            }
+            70% {
+                transform: translateX(80px) rotateY(180deg) scale(0.9);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(0) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Camera Island */
+        .iphone-mockup .camera-island {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95px;
+            height: 25px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 3;
+            box-shadow: 
+                0 0 0 2px rgba(28, 28, 28, 0.8),
+                inset 0 0 2px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .iphone-mockup .camera-island:before {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 0 2px #000,
+                0 0 0 2px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Side Buttons */
+        .iphone-mockup .power-button {
+            position: absolute;
+            top: 120px;
+            right: -2px;
+            width: 2px;
+            height: 65px;
+            background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+            border-radius: 2px 0 0 2px;
+            box-shadow: 
+                -1px 0 1px rgba(0, 0, 0, 0.5),
+                inset 1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .iphone-mockup .volume-buttons {
+            position: absolute;
+            left: -2px;
+            top: 120px;
+            width: 2px;
+            z-index: 2;
+        }
+
+        .iphone-mockup .volume-buttons:before,
+        .iphone-mockup .volume-buttons:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(to left, #2a2a2a, #1a1a1a);
+            border-radius: 0 2px 2px 0;
+            box-shadow: 
+                1px 0 1px rgba(0, 0, 0, 0.5),
+                inset -1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .iphone-mockup .volume-buttons:after {
+            top: 40px;
+        }
+
+        /* Mute Switch */
+        .iphone-mockup .mute-switch {
+            position: absolute;
+            left: -2px;
+            top: 70px;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to left, #2a2a2a, #1a1a1a);
+            border-radius: 0 2px 2px 0;
+            box-shadow: 
+                1px 0 1px rgba(0, 0, 0, 0.5),
+                inset -1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Screen */
+        .iphone-mockup .charger-homescreen {
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            object-fit: cover;
+            position: relative;
+            box-shadow: 
+                inset 0 0 2px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Screen Bezel */
+        .iphone-mockup .screen-bezel {
+            position: absolute;
+            inset: 10px;
+            border-radius: 35px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Reflective Effects */
+        .iphone-mockup .reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                145deg,
+                rgba(255, 255, 255, 0.03) 0%,
+                transparent 30%,
+                rgba(0, 0, 0, 0.1) 100%
+            );
+            border-radius: 45px;
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+
+        .hero-video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-overlay {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 1s ease;
+            visibility: hidden;
+            z-index: 2;
+            padding-left: 50px;
+            text-align: left;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .text-overlay h1 {
+            font-size: 4.5em;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-overlay h1 span {
+            font-weight: 700;
+            color: #ccc;
+        }
+
+        .text-overlay p {
+            font-size: 1.5em;
+            color: #ccc;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-top: 5px;
+        }
+
+        .text-appear {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        /* Apply Inter font to all elements */
+        body, 
+        h1, h2, h3, h4, h5, h6,
+        p, a, span, div, 
+        button, input, textarea {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Adjust specific text styles for better appearance */
+        .text-overlay h1 {
+            font-size: 4.5em;
+            font-weight: 800;  /* Extra bold for the main title */
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1;
+            letter-spacing: -0.02em;  /* Tighter letter spacing for headlines */
+        }
+
+        .text-overlay p {
+            font-size: 1.5em;
+            color: #ccc;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Enhance other text elements */
+        #mainmenu a {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .btn-main, .btn-line {
+            font-weight: 500;
+            letter-spacing: -0.01em;
         }
     </style>
 </head>
@@ -100,58 +374,23 @@
                             <div class="container">
                               <div class="row g-4 align-items-center">
                                 <div class="spacer-double"></div>
-                                <div class="col-lg-6">
-                                  <div class="spacer-single"></div>
-                                  <div class="sw-text-wrapper">
-                                    <div class="subtitle s2 mb-2">
-                                      <i class="icofont-badge id-color me-2"></i>Your One-Stop EV Charging Solution
+                                <div class="hero-container">
+                                    <div class="text-overlay">
+                                        <h1>Gide<span>ON</span></h1>
+                                        <p>Seamless Always</p>
                                     </div>
-                                    <h1 class="slider-title mb-2">Unified EV Charger Platform</h1>
-                                    <h3 class="slider-teaser mb-3">
-                                      Discover. Book. Charge. Seamlessly.
-                                    </h3>
-                                    <div class="slider-extra">
-                                      <div class="row mt-3 g-2 text-center">
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-map-pins"></i>
-                                            <div class="fs-18 fw-bold">500+</div>
-                                            <div class="fs-14 op-5">Chargers Available</div>
-                                          </div>
-                                        </div>
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-clock-time"></i>
-                                            <div class="fs-18 fw-bold">Real-Time</div>
-                                            <div class="fs-14 op-5">Status Updates</div>
-                                          </div>
-                                        </div>
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-wallet"></i>
-                                            <div class="fs-18 fw-bold">Unified Wallet</div>
-                                            <div class="fs-14 op-5">Across Providers</div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="spacer-30"></div>
-                                    <a class="btn-main mb10 mb-3" href="features.html">Explore Features</a>
-                                  </div>
+                                    <video 
+                                        id="hero-video"
+                                        autoplay 
+                                        muted 
+                                        class="hero-video"
+                                        onended="handleVideoEnd()"
+                                    >
+                                        <source src="./images/video/1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    
                                 </div>
-                                <div class="col-lg-6">
-                                  <div class="slider-extra">
-                                    <img
-                                      class="charger-homescreen"
-                                      width="36%"
-                                      height="64%"
-                                      src="./images//screens/homescreen.png"
-                                      class="img-fluid"
-                                      alt="EV Platform Dashboard"
-                                    />
-                                  </div>
-                                </div>
-                                <div class="spacer-single"></div>
                               </div>
                             </div>
                           </div>
@@ -592,6 +831,20 @@
     <script src="js/swiper.js"></script>
     <script src="js/custom-marquee.js"></script>
     <script src="js/custom-swiper-2.js"></script>
+    <script>
+        function handleVideoEnd() {
+            const textOverlay = document.querySelector('.text-overlay');
+            
+            // Show text
+            setTimeout(() => {
+                textOverlay.classList.add('text-appear');
+            }, 100);
+            
+            // Restart video
+            const video = document.getElementById('hero-video');
+            // video.play();
+        }
+    </script>
 
 </body>
 
