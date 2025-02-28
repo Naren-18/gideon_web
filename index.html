@@ -3,41 +3,3118 @@
 
 
 <!-- Mirrored from madebydesignesia.com/themes/autoev/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:52 GMT -->
+
 <head>
-    <title>Autoev — Electric Vehicle Charging EV Dealer Website Template</title>
-    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    <title>GideON — One App for All EV Charging Needs</title>
+    <!-- <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16"> -->
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="Autoev — Electric Vehicle Charging EV Dealer Website Template" name="description" >
-    <meta content="" name="keywords" >
-    <meta content="" name="author" >
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Autoev — Electric Vehicle Charging EV Dealer Website Template" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
     <!-- CSS Files
     ================================================== -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css" >
-    <link href="css/swiper.css" rel="stylesheet" type="text/css" >
-    <link href="css/style.css" rel="stylesheet" type="text/css" >
-    <link href="css/coloring.css" rel="stylesheet" type="text/css" >
+    <link href="css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="css/swiper.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/coloring.css" rel="stylesheet" type="text/css">
     <!-- color scheme -->
-    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
+    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
-        .charger-homescreen{
-            position: relative;
-    left: 12%;
+        .charger-homescreen {
+            position: static;
+            left: auto;
         }
-        .swiper-inner{
-            background-color:black;
+
+        .swiper-inner {
+            background-color: black;
+        }
+
+        .iphone-mockup {
+            position: relative;
+            width: 250px;
+            height: 500px;
+            background: linear-gradient(145deg, #2c2c2c, #1c1c1c);
+            border-radius: 45px;
+            box-shadow:
+                -3px 3px 15px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(28, 28, 28, 0.6),
+                inset 0 0 3px rgba(255, 255, 255, 0.05);
+            margin: 50px auto;
+            padding: 10px;
+            animation: slideInPhone 3.5s cubic-bezier(0.3, 0, 0.2, 1) forwards;
+            opacity: 0;
+            transform-style: preserve-3d;
+            perspective: 2000px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        @keyframes slideInPhone {
+            0% {
+                transform: translateX(200px) rotateY(360deg) scale(0.7);
+                opacity: 0;
+            }
+
+            40% {
+                transform: translateX(150px) rotateY(270deg) scale(0.8);
+                opacity: 0.3;
+            }
+
+            70% {
+                transform: translateX(80px) rotateY(180deg) scale(0.9);
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translateX(0) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Camera Island */
+        .iphone-mockup .camera-island {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95px;
+            height: 25px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 3;
+            box-shadow:
+                0 0 0 2px rgba(28, 28, 28, 0.8),
+                inset 0 0 2px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+
+        .iphone-mockup .camera-island:before {
+            content: '';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            box-shadow:
+                inset 0 0 2px #000,
+                0 0 0 2px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Side Buttons */
+        .iphone-mockup .power-button {
+            position: absolute;
+            top: 120px;
+            right: -2px;
+            width: 2px;
+            height: 65px;
+            background: linear-gradient(to right, #2a2a2a, #1a1a1a);
+            border-radius: 2px 0 0 2px;
+            box-shadow:
+                -1px 0 1px rgba(0, 0, 0, 0.5),
+                inset 1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .iphone-mockup .volume-buttons {
+            position: absolute;
+            left: -2px;
+            top: 120px;
+            width: 2px;
+            z-index: 2;
+        }
+
+        .iphone-mockup .volume-buttons:before,
+        .iphone-mockup .volume-buttons:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(to left, #2a2a2a, #1a1a1a);
+            border-radius: 0 2px 2px 0;
+            box-shadow:
+                1px 0 1px rgba(0, 0, 0, 0.5),
+                inset -1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .iphone-mockup .volume-buttons:after {
+            top: 40px;
+        }
+
+        /* Mute Switch */
+        .iphone-mockup .mute-switch {
+            position: absolute;
+            left: -2px;
+            top: 70px;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to left, #2a2a2a, #1a1a1a);
+            border-radius: 0 2px 2px 0;
+            box-shadow:
+                1px 0 1px rgba(0, 0, 0, 0.5),
+                inset -1px 0 1px rgba(255, 255, 255, 0.05);
+        }
+
+        /* Screen */
+        .iphone-mockup .charger-homescreen {
+            width: 100%;
+            height: 100%;
+            border-radius: 35px;
+            object-fit: cover;
+            position: relative;
+            box-shadow:
+                inset 0 0 2px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Screen Bezel */
+        .iphone-mockup .screen-bezel {
+            position: absolute;
+            inset: 10px;
+            border-radius: 35px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* Reflective Effects */
+        .iphone-mockup .reflection {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg,
+                    rgba(255, 255, 255, 0.03) 0%,
+                    transparent 30%,
+                    rgba(0, 0, 0, 0.1) 100%);
+            border-radius: 45px;
+            z-index: 1;
+        }
+
+        /* Update hero container styles */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 30%;
+            /* Push video to the right side */
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: none;
+        }
+
+        /* Add this to ensure video container maintains its dimensions */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Update text overlay styling */
+        .text-overlay {
+            position: absolute;
+            text-align: left;
+            max-width: 800px;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px;
+            pointer-events: none;
+        }
+
+        .text-overlay h1 {
+            font-size: 4.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-overlay p {
+            font-size: 2em;
+            color: rgba(255, 255, 255, 0.95);
+            white-space: nowrap;
+            letter-spacing: 0.05em;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            margin-bottom: 15px;
+        }
+
+        .text-overlay div {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            line-height: 1.5;
+        }
+
+        /* Remove any animation classes that might interfere */
+        .text-overlay .subtitle.wow {
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                min-height: 100vh;
+                padding: 0;
+                /* Remove default padding */
+            }
+
+            .video-container {
+                position: relative;
+                left: 0;
+                /* Reset position for mobile */
+                height: 50vh;
+                width: 100%;
+                order: 1;
+                overflow: hidden;
+                margin-top: 60px;
+                /* Add space at the top for mobile */
+            }
+
+            .hero-video {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                left: 0;
+                top: 0;
+                transform: none;
+                padding-top: 20px;
+                /* Add some padding to the video */
+            }
+
+            .text-overlay {
+                position: relative;
+                order: 2;
+                left: 0;
+                top: 0;
+                transform: none;
+                text-align: center;
+                padding: 30px 20px;
+                width: 100%;
+            }
+
+            .text-overlay h1 {
+                font-size: 2.5em;
+                margin-bottom: 15px;
+            }
+
+            .text-overlay p {
+                font-size: 1.2em;
+                white-space: normal;
+            }
+
+            .text-overlay div {
+                font-size: 1em;
+                margin: 0 auto;
+            }
+        }
+
+        .text-appear {
+            opacity: 1;
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+        /* Apply Inter font to all elements */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        div,
+        button,
+        input,
+        textarea {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Adjust specific text styles for better appearance */
+        .text-overlay h1 {
+            font-size: 4.5em;
+            font-weight: 800;
+            /* Extra bold for the main title */
+            color: white;
+            margin-bottom: 10px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            /* Tighter letter spacing for headlines */
+        }
+
+        .text-overlay p {
+            font-size: 1.5em;
+            color: #ccc;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+
+        /* Enhance other text elements */
+        #mainmenu a {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .btn-main,
+        .btn-line {
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .about-section {
+            padding: 120px 0;
+            background: black;
+        }
+
+        .about-content h2,
+        .about-content p {
+            color: white;
+        }
+
+        .about-content h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-stat h3 {
+            color: #fff;
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        .about-stat p {
+            color: #fff;
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            padding: 20px;
+        }
+
+        .about-image-main {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-floating-card {
+            position: absolute;
+            bottom: 30px;
+            right: -20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            min-width: 200px;
+        }
+
+        .about-floating-card .card-icon {
+            width: 50px;
+            height: 50px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-floating-card .card-icon i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .about-floating-card .card-content {
+            flex: 1;
+        }
+
+        .about-floating-card h4 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .about-floating-card p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 991px) {
+            .about-content {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .about-floating-card {
+                right: 0;
+            }
+        }
+
+        /* Global section styles */
+        section {
+            background: black !important;
+            color: white !important;
+        }
+
+        /* Text colors */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            color: white !important;
+        }
+
+        .subtitle {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Card styles for all sections */
+        .about-stat,
+        .mb-4.relative,
+        .about-floating-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* Feature cards specific styles */
+        .mb-4.relative {
+            padding: 20px;
+            border-radius: 15px;
+            margin: 10px 0;
+        }
+
+        .mb-4.relative .absolute {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .mb-4.relative i {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        /* Floating card styles */
+        .about-floating-card {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .about-floating-card .card-icon {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .about-floating-card .card-icon i {
+            color: white;
+        }
+
+        .about-floating-card h4,
+        .about-floating-card p {
+            color: white !important;
+        }
+
+        /* Button styles */
+        .btn-text {
+            color: white !important;
+        }
+
+        /* Section specific overrides */
+        .section-dark {
+            background: black !important;
+        }
+
+        .jarallax {
+            background: black !important;
+        }
+
+        /* Additional glassmorphism effects */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* Hover effects */
+        .about-stat:hover,
+        .mb-4.relative:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* Media query adjustments */
+        @media (max-width: 991px) {
+
+            .about-content,
+            .mb-4.relative {
+                margin-bottom: 30px;
+            }
+        }
+
+
+        .feature-image {
+            padding: 20px;
+        }
+
+        .feature-image img {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide {
+            opacity: 0.4;
+            transition: opacity 0.5s ease;
+            /* Smooth transition */
+        }
+
+        .swiper-slide-active {
+            opacity: 1;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
+            /* Change on hover */
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        .key-features-description {
+            padding: 20px;
+            /* Adjust padding */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            margin: 20px;
+            transition: transform 0.3s ease;
+            /* Smooth transition for text box */
+            opacity: 0;
+            /* Start hidden */
+            transform: translateY(20px);
+            /* Slide up effect */
+        }
+
+        .key-features-description.active {
+            opacity: 1;
+            /* Show active text */
+            transform: translateY(0);
+            /* Slide to original position */
+            animation: fadeIn 0.5s ease-in-out;
+            /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* Slide up effect */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font: 16px/1.3 sans-serif;
+            background: #222;
+        }
+
+        .CSSgal {
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            /* Or set a fixed height */
+        }
+
+        .CSSgal .slider {
+            height: 100%;
+            white-space: nowrap;
+            font-size: 0;
+            transition: 0.8s;
+        }
+
+        .CSSgal .slider>div {
+            font-size: 1rem;
+            display: inline-block;
+            white-space: normal;
+            vertical-align: top;
+            height: 100%;
+            width: 100%;
+            background: none 50% no-repeat;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            /* Start hidden */
+            transition: opacity 0.5s ease-in-out;
+            /* Smooth transition */
+        }
+
+        .CSSgal .slider>div.active {
+            opacity: 1;
+            /* Show active slide */
+            animation: fadeIn 0.5s ease-in-out;
+            /* Fade in animation */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* Slide up effect */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .CSSgal .prevNext {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            width: 100%;
+            height: 0;
+        }
+
+        .CSSgal .prevNext>div+div {
+            visibility: hidden;
+            /* Hide all but first P/N container */
+        }
+
+        .CSSgal .prevNext a {
+            background: #fff;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            /* If you want to place numbers */
+            text-align: center;
+            opacity: 0.7;
+            transition: 0.3s;
+            transform: translateY(-50%);
+            left: 0;
+        }
+
+        .CSSgal .prevNext a:hover {
+            opacity: 1;
+        }
+
+        .CSSgal .prevNext a+a {
+            left: auto;
+            right: 0;
+        }
+
+        .CSSgal .bullets {
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .CSSgal .bullets>a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-decoration: none;
+            text-align: center;
+            background: rgba(255, 255, 255, 1);
+            transition: 0.3s;
+        }
+
+        .CSSgal .bullets>a+a {
+            background: rgba(255, 255, 255, 0.5);
+            /* Dim all but first */
+        }
+
+        .CSSgal .bullets>a:hover {
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* NAVIGATION BUTTONS */
+        /* ALL: */
+        .CSSgal>s:target~.bullets>* {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ACTIVE */
+        #s1:target~.bullets>*:nth-child(1) {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        #s2:target~.bullets>*:nth-child(2) {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        #s3:target~.bullets>*:nth-child(3) {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* PREV/NEXT CONTAINERS VISIBILITY */
+        /* ALL: */
+        .CSSgal>s:target~.prevNext>* {
+            visibility: hidden;
+        }
+
+        /* ACTIVE: */
+        #s1:target~.prevNext>*:nth-child(1) {
+            visibility: visible;
+        }
+
+        #s2:target~.prevNext>*:nth-child(2) {
+            visibility: visible;
+        }
+
+        #s3:target~.prevNext>*:nth-child(3) {
+            visibility: visible;
+        }
+
+        /* SLIDER ANIMATION POSITIONS */
+        #s1:target~.slider {
+            transform: translateX(0%);
+            -webkit-transform: translateX(0%);
+        }
+
+        #s2:target~.slider {
+            transform: translateX(-100%);
+            -webkit-transform: translateX(-100%);
+        }
+
+        #s3:target~.slider {
+            transform: translateX(-200%);
+            -webkit-transform: translateX(-200%);
+        }
+
+        /* Slideshow Styles */
+        .slideshow {
+            width: 100%;
+            height: 500px;
+            border: 0px;
+            padding: 0px;
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Override background-size for all slides */
+        .slideshow .slide {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+        }
+
+        /* Highlight active slide button - fixed version */
+        #slideCheckbox1:checked~.slide-button[for="slideCheckbox1"],
+        #slideCheckbox2:checked~.slide-button[for="slideCheckbox2"],
+        #slideCheckbox3:checked~.slide-button[for="slideCheckbox3"],
+        #slideCheckbox4:checked~.slide-button[for="slideCheckbox4"],
+        #slideCheckbox5:checked~.slide-button[for="slideCheckbox5"] {
+            color: #fff;
+            border-bottom-width: 6px;
+            transform: translateY(-3px);
+            transition: all 0.3s ease;
+        }
+
+        /* Update slideshow button styles */
+        .slide-buttons {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .slide-button {
+            cursor: pointer;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            min-width: 140px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .slide-button span {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        /* Active and hover states */
+        .slide-button:hover,
+        input[type="radio"]:checked~.slide-buttons .slide-button[for="slideCheckbox1"],
+        input[type="radio"]:checked~.slide-buttons .slide-button[for="slideCheckbox2"],
+        input[type="radio"]:checked~.slide-buttons .slide-button[for="slideCheckbox3"] {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-button:hover span,
+        input[type="radio"]:checked~.slide-buttons .slide-button span {
+            color: #ffffff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .slide-buttons {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .slide-button {
+                padding: 10px 20px;
+                min-width: 120px;
+            }
+
+            .slide-button span {
+                font-size: 13px;
+            }
+        }
+
+        .slide-button:nth-child(1) {
+            left: calc(50% + (0 * (50% / 5)));
+            border-bottom-color: #2e112d;
+        }
+
+        .slide-button:nth-child(4) {
+            left: calc(50% + (1 * (50% / 5)));
+            border-bottom-color: #540032;
+        }
+
+        .slide-button:nth-child(7) {
+            left: calc(50% + (2 * (50% / 5)));
+            border-bottom-color: #820333;
+        }
+
+        .slide-button:nth-child(10) {
+            left: calc(50% + (3 * (50% / 5)));
+            border-bottom-color: #c9283e;
+        }
+
+        .slide-button:nth-child(13) {
+            left: calc(50% + (4 * (50% / 5)));
+            border-bottom-color: #f0433a;
+        }
+
+        /* Position the 6th button (Bookings) */
+        .slide-button:nth-child(16) {
+            left: calc(50% + (5 * (50% / 5)));
+            border-bottom-color: #f0433a;
+        }
+
+        .slide {
+            transform: translateX(-100%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-size: 50% 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide__content {
+            box-sizing: border-box;
+            height: calc(100% - 60px);
+            overflow: auto;
+            padding: 50px;
+            color: #ddd;
+            position: absolute;
+            left: 100%;
+            display: none;
+            animation-name: fade-in;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            opacity: 1;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked+.slide {
+            transform: translateX(0px);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        input[type="radio"]:checked+.slide .slide__content {
+            width: 100%;
+            display: block;
+        }
+
+        /* Update slide background image selectors */
+        .slide:nth-child(3) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        .slide:nth-child(5) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        .slide:nth-child(7) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        .slide:nth-child(9) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        .slide:nth-child(12) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        .slide:nth-child(15) {
+            background: url('./images/screen.jpg');
+            background-position: center;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+        #featuresSection {
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            padding: 60px 0;
+            overflow: hidden;
+        }
+
+        #featuresSection .container-fluid {
+            max-width: 100%;
+            padding: 0 30px;
+            margin: 0;
+        }
+
+        #featuresSection .row {
+            margin: 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Remove any potential border or outline */
+        #featuresSection * {
+            box-sizing: border-box;
+        }
+
+        /* Ensure columns don't have unwanted margins */
+        .col-12,
+        .col-md-6 {
+            padding: 10px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            #featuresSection .container-fluid {
+                padding: 0 15px;
+            }
+        }
+
+        #featuresSection .mainHeading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        #featuresSection .subheading {
+            color: #4CAF50;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-bottom: 20px;
+            /* Add space between rows */
+        }
+
+        .feature-item .icon-box {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            /* Ensure consistent width */
+            background: rgba(255, 255, 255, 0.05);
+            /* Changed from green to subtle white */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Subtle white border */
+        }
+
+        .feature-item .icon-box i {
+            color: #ffffff;
+            /* White icon color */
+            font-size: 24px;
+        }
+
+        .feature-item .content {
+            flex: 1;
+            /* Allow content to take remaining space */
+            overflow: hidden;
+            /* Prevent text overflow */
+        }
+
+        .feature-item .content h2 {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .feature-item .content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            /* Limit to 3 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            #featuresSection .container-fluid {
+                padding: 0 20px;
+            }
+
+            .feature-item {
+                margin-bottom: 15px;
+            }
+
+            .feature-item .icon-box {
+                width: 50px;
+                height: 50px;
+                min-width: 50px;
+            }
+
+            .feature-item .content h2 {
+                font-size: 1.1rem;
+            }
+
+            .feature-item .content p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile responsive styles for slideshow */
+        @media (max-width: 991px) {
+            .slideshow {
+                height: 800px;
+                /* Much taller slideshow on mobile to prevent overlap */
+            }
+
+            .slide {
+                width: 100%;
+                /* Full width slides on mobile */
+                background-size: 80% auto !important;
+                /* Smaller image size */
+                background-position: center 100px !important;
+                /* Position image at the top with some padding */
+                background-repeat: no-repeat !important;
+            }
+
+            .slide__content {
+                height: auto;
+                /* Auto height based on content */
+                min-height: 60%;
+                left: 0;
+                top: 350px;
+                /* Fixed position below the image */
+                width: 100%;
+                padding: 20px;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.8);
+                /* Dark background for better readability */
+                border-top: 2px solid var(--accent-color);
+            }
+
+            /* Adjust button positioning for mobile */
+            .slide-button {
+                width: 16%;
+                font-size: 10px;
+                height: 40px;
+                line-height: 40px;
+                margin: 0;
+                bottom: 10px;
+                /* Move buttons up from the bottom */
+            }
+
+            .slide-button:nth-child(1) {
+                left: 0%;
+            }
+
+            .slide-button:nth-child(4) {
+                left: 16.66%;
+            }
+
+            .slide-button:nth-child(7) {
+                left: 33.33%;
+            }
+
+            .slide-button:nth-child(10) {
+                left: 50%;
+            }
+
+            .slide-button:nth-child(13) {
+                left: 66.66%;
+            }
+
+            .slide-button:nth-child(16) {
+                left: 83.33%;
+            }
+
+            /* Adjust content styling for mobile */
+            .slide__content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .slide__content p {
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+
+            .slide__content .mt-4 {
+                margin-top: 15px !important;
+            }
+
+            .slide__content .fs-56 {
+                font-size: 36px !important;
+            }
+
+            /* Fix radio button behavior on mobile */
+            input[type="radio"]:checked+.slide {
+                transform: translateX(0);
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 576px) {
+            .slideshow {
+                height: 850px;
+                /* Even more height for small devices */
+            }
+
+            .slide {
+                background-size: 70% auto !important;
+                /* Even smaller image on small devices */
+                background-position: center 80px !important;
+            }
+
+            .slide__content {
+                top: 300px;
+                /* Adjust content position for small screens */
+            }
+
+            .slide-button {
+                font-size: 8px;
+                height: 30px;
+                line-height: 30px;
+                width: 16.66%;
+                padding: 0;
+            }
+        }
+
+        /* Additional styles for feature cards */
+        /* New styles for feature cards that don't conflict with existing styles */
+        .feature-card {
+            background: linear-gradient(145deg, #1a1a2a, #2d2d3d);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            min-height: 320px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            border-left: 3px solid rgba(41, 128, 185, 0.3);
+            border-radius: 10px;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--accent-color);
+            background: linear-gradient(145deg, #1e2a3a, #2c3e50);
+        }
+
+        .feature-card h4 {
+            color: var(--accent-color);
+            margin-top: 15px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-card p {
+            color: #bbb;
+            flex-grow: 1;
+        }
+
+        .feature-card strong {
+            color: #fff;
+        }
+
+        .feature-card .absolute {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* Make all feature cards in a row the same height */
+        .feature-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .feature-row>div {
+            display: flex;
+        }
+
+        /* Responsive adjustments for feature cards */
+        @media (max-width: 991px) {
+            .feature-card {
+                margin-bottom: 20px;
+                min-height: 280px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .feature-card {
+                min-height: 0;
+            }
+        }
+
+        /* Feature slider specific styles */
+        .feature-slider-container {
+            padding: 20px 0;
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .feature-swiper {
+            padding: 30px 10px 60px;
+            height: auto;
+            overflow: visible;
+            position: relative;
+            width: 100%;
+        }
+
+        .feature-swiper .swiper-slide {
+            height: auto;
+            transition: all 0.3s ease;
+            opacity: 1;
+            display: flex;
+        }
+
+        .feature-swiper .swiper-slide-active,
+        .feature-swiper .swiper-slide-next,
+        .feature-swiper .swiper-slide-prev {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Ensure smooth looping */
+        .feature-swiper .swiper-wrapper {
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            align-items: stretch;
+        }
+
+        /* Fix for duplicate slides in loop mode */
+        .feature-swiper .swiper-slide-duplicate {
+            visibility: visible !important;
+            opacity: 1;
+        }
+
+        /* Ensure all cards have consistent styling */
+        .feature-card {
+            height: 100%;
+            min-height: 380px;
+            background: linear-gradient(145deg, #1a1a2a, #2d2d3d);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            border-radius: 10px;
+            border-left: 3px solid rgba(41, 128, 185, 0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            position: relative;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--accent-color);
+            background: linear-gradient(145deg, #1e2a3a, #2c3e50);
+        }
+
+        .feature-card .absolute {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .feature-card h4 {
+            color: var(--accent-color);
+            margin-top: 15px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .feature-card p {
+            color: #bbb;
+            flex-grow: 1;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .feature-card strong {
+            color: #fff;
+        }
+
+        .feature-card a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        /* Fix navigation buttons */
+        .feature-swiper .swiper-button-next,
+        .feature-swiper .swiper-button-prev {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+        }
+
+        .feature-swiper .swiper-button-next:hover,
+        .feature-swiper .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .feature-swiper .swiper-button-next:after,
+        .feature-swiper .swiper-button-prev:after {
+            font-size: 20px;
+        }
+
+        /* Fix pagination */
+        .feature-swiper .swiper-pagination {
+            bottom: 10px;
+        }
+
+        .feature-swiper .swiper-pagination-bullet {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .feature-swiper .swiper-pagination-bullet-active {
+            background: var(--accent-color);
+        }
+
+        /* Mobile responsiveness for hero section */
+        @media (max-width: 991px) {
+            .hero-container {
+                flex-direction: column-reverse;
+                min-height: 40vh;
+            }
+
+            .hero-video {
+                width: 100%;
+                max-width: 100%;
+                order: 2;
+            }
+
+            .text-overlay {
+                position: relative;
+                padding: 20px;
+                text-align: center;
+                max-width: 100%;
+                margin-top: 0;
+                margin-bottom: 20px;
+                order: 1;
+            }
+
+            .text-overlay h1 {
+                font-size: 3em;
+            }
+
+            .text-overlay p {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-container {
+                min-height: 30vh;
+            }
+
+            .text-overlay h1 {
+                font-size: 2.5em;
+            }
+
+            .text-overlay p {
+                font-size: 1em;
+            }
+
+            .swiper-inner {
+                padding: 10px 0;
+            }
+        }
+
+        /* Ensure video is properly sized on mobile */
+        @media (max-width: 767px) {
+            #hero-video {
+                width: 100%;
+                height: auto;
+            }
+
+            .text-appear {
+                transform: translateY(0);
+            }
+        }
+
+        /* Additional styles for quote and features sections */
+        @media (max-width: 991px) {
+
+            /* Quote section mobile responsiveness */
+            .relative.overflow-hidden.bg-dark.text-light .col-lg-6.absolute {
+                position: relative;
+                height: 300px;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .relative.overflow-hidden.bg-dark.text-light .col-lg-6.offset-lg-6 {
+                padding: 20px;
+            }
+
+            /* Features section mobile responsiveness */
+            .jarallax .col-lg-3 {
+                margin-bottom: 30px;
+            }
+
+            .jarallax .bg-white {
+                background: rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px);
+            }
+
+            .jarallax .bg-white h5,
+            .jarallax .bg-white p {
+                color: white !important;
+            }
+        }
+
+        /* Dark theme styling for features section */
+        .jarallax .bg-white {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .jarallax .bg-white:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15) !important;
+        }
+
+        .jarallax .bg-white h5,
+        .jarallax .bg-white p {
+            color: white !important;
+        }
+
+        /* Quote section styling */
+        .relative.overflow-hidden.bg-dark.text-light {
+            background: linear-gradient(145deg, #1a1a2a, #2d2d3d) !important;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .relative.overflow-hidden.bg-dark.text-light h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.4;
+        }
+
+        .relative.overflow-hidden.bg-dark.text-light .icofont-quote-left {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Additional styles for feature cards */
+        .about-stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .about-stat:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .about-stat .card-icon {
+            margin-bottom: 20px;
+        }
+
+        .about-stat .card-icon img {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .about-stat:hover .card-icon img {
+            transform: scale(1.05);
+        }
+
+        .about-stat h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .about-stat p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 991px) {
+            .about-stat {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Add to your existing CSS */
+        #s6:target~.bullets>*:nth-child(6) {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        #s6:target~.prevNext>*:nth-child(6) {
+            visibility: visible;
+        }
+
+        #s6:target~.slider {
+            transform: translateX(-500%);
+            -webkit-transform: translateX(-500%);
+        }
+
+        .text-overlay .subtitle {
+            font-size: 1.2em;
+            color: rgba(255, 255, 255, 0.8);
+            white-space: normal;
+            letter-spacing: 0.02em;
+            margin-top: 15px;
+            max-width: 600px;
+        }
+
+        @media (max-width: 768px) {
+            .text-overlay .subtitle {
+                font-size: 1em;
+                margin-top: 10px;
+            }
+        }
+
+        /* Update accent colors */
+        .text-accent {
+            color: #ffffff !important;
+            /* Change from green to white */
+        }
+
+        .bg-accent {
+            background: rgba(255, 255, 255, 0.05) !important;
+            /* Subtle white background */
+        }
+
+        /* Update feature icons */
+        .feature-item .icon-box {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            /* Changed from green to subtle white */
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* Subtle white border */
+        }
+
+        .feature-item .icon-box i {
+            color: #ffffff;
+            /* White icon color */
+            font-size: 24px;
+        }
+
+        /* Update any accent colors */
+        .bg-accent {
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        .text-accent {
+            color: #ffffff !important;
+        }
+
+        /* Update hover states */
+        .feature-item:hover .icon-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Update subheading color */
+        #featuresSection .subheading {
+            color: rgba(255, 255, 255, 0.7);
+            /* Change from green to semi-transparent white */
+        }
+
+        /* Update any other green accents */
+        .subtitle.bg-grey {
+            background: rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important;
+        }
+
+        .id-color {
+            color: #ffffff !important;
+            /* Change from accent color to white */
+        }
+
+        /* Update any hover states */
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .feature-item:hover .icon-box {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Update any buttons or interactive elements */
+        .btn-main {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .btn-line {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        /* Feature Section Styles - Dark Theme */
+        #featuresSection {
+            padding: 80px 0;
+            background: #111111;
+            /* Dark background */
+            color: #ffffff;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            /* White text */
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            /* Semi-transparent white */
+        }
+
+        .feature-box {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            /* Semi-transparent white */
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            /* Slightly transparent white */
+        }
+
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            height: 250px;
+            /* Increased height */
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card .card-front {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            padding: 15px;
+        }
+
+        .advantage-card .card-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.98), rgba(21, 101, 192, 0.98));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 25px;
+            /* Increased padding */
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .advantage-card:hover .card-front {
+            transform: translate(-50%, -150%);
+            opacity: 0;
+        }
+
+        .advantage-card:hover .card-hover {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: #1e88e5;
+            margin-bottom: 15px;
+        }
+
+        .advantage-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            /* Reduced margin to give more space to paragraph */
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        .advantage-card p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.3px;
+        }
+
+        .advantage-card .card-hover-content {
+            max-width: 95%;
+            /* Increased width for content */
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .advantage-card {
+                height: 280px;
+                /* Even taller on mobile for better text visibility */
+            }
+
+            .advantage-card .card-hover {
+                padding: 25px 20px;
+            }
+
+            .advantage-card h4 {
+                font-size: 1.3rem;
+            }
+
+            .advantage-card p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Contact Section Styles */
+        .contact-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            padding: 50px !important;
+        }
+
+        .contact-info-wrapper {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 40px;
+        }
+
+        .contact-info {
+            text-align: center;
+            padding: 30px 20px;
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .contact-info:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(248, 171, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .icon-circle i {
+            font-size: 32px;
+            color: #f8ab37;
+        }
+
+        .contact-info:hover .icon-circle {
+            background: rgba(248, 171, 55, 0.2);
+            transform: scale(1.1);
+        }
+
+        .contact-info h5 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin: 20px 0 15px;
+        }
+
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .contact-form .form-control {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            height: auto;
+        }
+
+        .contact-form .form-floating label {
+            color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+        }
+
+        .contact-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(248, 171, 55, 0.5);
+            box-shadow: none;
+        }
+
+        .contact-form .btn-primary {
+            background: #f8ab37;
+            border: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 15px 40px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form .btn-primary:hover {
+            background: #e59a26;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(248, 171, 55, 0.2);
+        }
+
+        /* Logo Styles */
+        #logo {
+            padding: 10px 0;
+            min-height: 50px;
+            position: relative;
+            top: 10px;
+        }
+
+        #logo img {
+            height: 60px;
+            /* Increased height */
+            width: auto;
+            display: block;
+            transition: all 0.3s ease;
+            margin-right: 20px;
+            /* Add some spacing from menu */
+        }
+
+        /* Adjust logo size for mobile */
+        @media only screen and (max-width: 768px) {
+            #logo {
+                left: 0;
+                top: 0;
+                text-align: center;
+            }
+
+            #logo img {
+                height: 45px;
+                margin: 0 auto;
+                /* Center the logo */
+            }
+        }
+
+        /* Make sure logo is visible on dark background */
+        .header-dark #logo img {
+            filter: brightness(1);
+            /* Adjust if needed */
+            max-width: none;
+            /* Prevent max-width constraints */
+        }
+
+        /* Update accent colors and theme colors throughout the page */
+        .text-primary,
+        .text-accent,
+        .id-color {
+            color: #1e88e5 !important;
+            /* Colors.blue.shade600 */
+        }
+
+        .icon-circle {
+            background: rgba(30, 136, 229, 0.1);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        .icon-circle i {
+            color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .contact-info:hover .icon-circle {
+            background: rgba(30, 136, 229, 0.2);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        .contact-form .form-control:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(30, 136, 229, 0.5);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        .contact-form .btn-primary {
+            background: #1565c0;
+            /* Colors.blue.shade800 */
+        }
+
+        .contact-form .btn-primary:hover {
+            background: #1e88e5;
+            /* Colors.blue.shade600 */
+            box-shadow: 0 5px 15px rgba(30, 136, 229, 0.2);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        /* Update any gradient backgrounds */
+        .bg-gradient {
+            background: linear-gradient(45deg,
+                    #1e88e5,
+                    /* Colors.blue.shade600 */
+                    #1565c0
+                    /* Colors.blue.shade800 */
+                ) !important;
+        }
+
+        /* Update any button hover states */
+        .btn-primary:hover {
+            background: #1565c0;
+            /* Colors.blue.shade800 */
+        }
+
+        /* Update any accent borders or highlights */
+        .accent-border {
+            border-color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .accent-highlight {
+            background: rgba(30, 136, 229, 0.1);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        /* Text Selection Color */
+        ::selection {
+            background: rgba(30, 136, 229, 0.3);
+            /* Colors.blue.shade600 with opacity */
+            color: #ffffff;
+        }
+
+        ::-moz-selection {
+            background: rgba(30, 136, 229, 0.3);
+            /* Colors.blue.shade600 with opacity */
+            color: #ffffff;
+        }
+
+        /* Update all hover effects */
+        a:hover {
+            color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .btn-line:hover {
+            background: #1e88e5;
+            /* Colors.blue.shade600 */
+            border-color: #1e88e5;
+            color: #ffffff;
+        }
+
+        .feature-item:hover {
+            background: rgba(30, 136, 229, 0.1);
+            /* Colors.blue.shade600 with opacity */
+        }
+
+        .feature-item:hover .icon-box {
+            background: rgba(30, 136, 229, 0.2);
+            /* Colors.blue.shade600 with opacity */
+            border-color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .social-icons a:hover {
+            background: #1e88e5;
+            /* Colors.blue.shade600 */
+            border-color: #1e88e5;
+        }
+
+        .menu-item:hover {
+            color: #1e88e5 !important;
+            /* Colors.blue.shade600 */
+        }
+
+        #mainmenu li:hover>a {
+            color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .feature-card:hover {
+            border-color: #1e88e5;
+            /* Colors.blue.shade600 */
+            box-shadow: 0 5px 15px rgba(30, 136, 229, 0.2);
+        }
+
+        .widget ul li a:hover {
+            color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        .btn-main:hover {
+            background: #1565c0;
+            /* Colors.blue.shade800 */
+            color: #ffffff;
+        }
+
+        /* Update active states */
+        .active-menu-item {
+            color: #1e88e5 !important;
+            /* Colors.blue.shade600 */
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #1e88e5 !important;
+            /* Colors.blue.shade600 */
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            color: #1e88e5;
+            /* Colors.blue.shade600 */
+        }
+
+        /* Logo Styles */
+        #logo {
+            padding: 10px 0;
+        }
+
+        /* Remove navigation numbering */
+        #mainmenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #mainmenu li {
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        /* Feature Box Styles */
+        .feature-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 25px;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(30, 136, 229, 0.2);
+        }
+
+        .feature-box-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(30, 136, 229, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-box-icon i {
+            font-size: 24px;
+            color: #1e88e5;
+        }
+
+        .feature-box-content h4 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-box-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .feature-box {
+                padding: 20px;
+            }
+
+            .feature-box-content h4 {
+                font-size: 1.1rem;
+            }
+        }
+
+        .ag-format-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 15px;
+            background-color: #111111;
+        }
+
+        .ag-courses_box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .ag-courses_item {
+            flex-basis: calc(33.33% - 30px);
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .ag-courses-item_link {
+            display: block;
+            padding: 30px 20px;
+            background-color: #121212;
+            overflow: hidden;
+            position: relative;
+            height: 100%;
+        }
+
+        .ag-courses-item_link:hover,
+        .ag-courses-item_link:hover .ag-courses-item_date {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        .ag-courses-item_link:hover .ag-courses-item_bg {
+            -webkit-transform: scale(10);
+            -ms-transform: scale(10);
+            transform: scale(10);
+        }
+
+        .ag-courses-item_bg {
+            height: 128px;
+            width: 128px;
+            background-color: #1e88e5;
+            /* Changed to match your theme blue */
+            z-index: 1;
+            position: absolute;
+            top: -75px;
+            right: -75px;
+            border-radius: 50%;
+            transition: all .5s ease;
+        }
+
+        /* Ensure content stays above the background */
+        .ag-courses-item_title,
+        .ag-courses-item_date-box {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Make sure the hover effect covers the entire card */
+        .ag-courses_item {
+            display: flex;
+            height: 100%;
+        }
+
+        .ag-courses-item_link {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .ag-courses-item_title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ag-courses-item_date-box {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+
+        .ag-courses-item_link:hover {
+            transform: translateY(-5px);
+        }
+
+        .ag-courses-item_link:hover .ag-courses-item_bg {
+            transform: scale(10);
+            background-color: #1565c0;
+        }
+
+        .ag-courses-item_link:hover .ag-courses-item_date-box {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media only screen and (max-width: 979px) {
+            .ag-courses_item {
+                flex-basis: calc(50% - 30px);
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ag-courses_item {
+                flex-basis: 100%;
+            }
+
+            .ag-courses-item_title {
+                font-size: 20px;
+            }
+        }
+
+        .slide {
+            transform: translateX(-100%);
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-size: 50% 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Mobile responsive adjustments */
+        @media only screen and (max-width: 768px) {
+            .slideshow {
+                height: 400px;
+                /* Reduce overall slideshow height */
+            }
+
+            .slide {
+                width: 100%;
+                /* Full width on mobile */
+                background-size: contain !important;
+                background-position: center !important;
+            }
+
+            .slide__content {
+                padding: 20px;
+                /* Reduce padding */
+                height: calc(100% - 80px);
+                /* Adjust content height */
+            }
+
+            .slide__content h3 {
+                font-size: 1.5rem;
+                /* Smaller heading */
+                margin-bottom: 10px;
+            }
+
+            .slide__content p {
+                font-size: 0.9rem;
+                /* Smaller text */
+                margin-bottom: 8px;
+            }
+
+            .slide__content i {
+                font-size: 40px !important;
+                /* Smaller icons */
+                padding: 10px !important;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .slideshow {
+                height: 350px;
+                /* Even smaller for very small screens */
+            }
+        }
+
+        /* Update mobile styles for slideshow */
+        @media only screen and (max-width: 768px) {
+            .slideshow {
+                height: 400px;
+            }
+
+            .slide {
+                width: 100%;
+                background-size: 100% auto !important;
+                background-position: center !important;
+            }
+
+            .slide__content {
+                position: relative;
+                width: 100%;
+                left: 0;
+                padding: 20px;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.7);
+                margin-top: 180px;
+            }
+
+            .slide-buttons {
+                bottom: -50px;
+                /* Move buttons below the slideshow */
+                position: relative;
+                /* Change to relative positioning */
+                padding-bottom: 20px;
+            }
+
+            .slide__content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+
+            .slide__content p {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            .slide__content i {
+                font-size: 40px !important;
+                padding: 10px !important;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .slideshow {
+                height: 400px;
+                /* Increase height to accommodate buttons */
+                margin-bottom: 60px;
+                /* Add space below slideshow for buttons */
+            }
+
+            .slide__content {
+                margin-top: 150px;
+            }
+
+            .slide__content h3 {
+                font-size: 1.3rem;
+            }
+
+            .slide__content p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Update slide content styles for mobile */
+        @media only screen and (max-width: 768px) {
+            .slideshow {
+                height: 400px;
+            }
+
+            .slide {
+                width: 100%;
+                background-size: contain !important;
+                background-position: center !important;
+            }
+
+            input[type="radio"]:checked+.slide .slide__content {
+                position: static;
+                width: 100%;
+                left: 0;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .slide__content {
+                position: static;
+                width: 100%;
+                left: 0;
+                padding: 20px;
+                height: auto;
+                text-align: center;
+            }
+
+            .slide__content h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #fff;
+            }
+
+            .slide__content p {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .slide__content i {
+                font-size: 40px !important;
+                padding: 10px !important;
+            }
+
+            .slide-buttons {
+                bottom: 20px;
+            }
+        }
+
+        /* Update slideshow button styles */
+        .slide-buttons {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .slideshow {
+                height: 500px;
+                /* Increase height to accommodate content and buttons */
+                position: relative;
+                margin-bottom: 20px;
+            }
+
+            .slide {
+                width: 100%;
+                background-size: contain !important;
+                background-position: top center !important;
+                height: 60%;
+                /* Reduce height to make room for content and buttons */
+            }
+
+            .slide__content {
+                position: absolute;
+                bottom: 80px;
+                /* Position above buttons */
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                background: rgba(0, 0, 0, 0.7);
+                text-align: center;
+            }
+
+            .slide-buttons {
+                position: absolute;
+                bottom: 20px;
+                padding-bottom: 20px;
+                z-index: 100;
+            }
+
+            .slide-button {
+                padding: 8px 15px;
+                min-width: 100px;
+            }
+        }
+
+        /* Add/Update scrollbar styles */
+        .scrollbar-v {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            pointer-events: none;
+            /* Ensure it doesn't interfere with clicking */
+        }
+
+        .scrollbar-v:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: var(--scroll-height, 0%);
+            background: #1e88e5;
+            /* Use your theme blue color */
+            transition: height 0.3s ease;
+        }
+
+        /* Fix video position after playing */
+        .video-container.video-ended {
+            position: relative;
+        }
+
+        .video-container.video-ended .hero-video {
+            position: relative;
+            transform: none;
+            left: 0;
+            top: 0;
+        }
+
+        /* Update card styles for uniform height */
+        .ag-courses_box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .ag-courses_item {
+            flex-basis: calc(33.33% - 30px);
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            height: 240px;
+            /* Fixed height for all cards */
+        }
+
+        .ag-courses-item_link {
+            display: block;
+            padding: 30px 20px;
+            background-color: #121212;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ag-courses-item_title {
+            min-height: 70px;
+            margin: 0 0 10px;
+            overflow: hidden;
+            font-weight: bold;
+            font-size: 25px;
+            color: #FFF;
+            z-index: 2;
+            position: relative;
+        }
+
+        .ag-courses-item_date-box {
+            flex: 1;
+            font-size: 15px;
+            color: #FFF;
+            z-index: 2;
+            position: relative;
+            overflow-y: auto;
+            /* Allow scrolling if content is too long */
+        }
+
+        @media only screen and (max-width: 979px) {
+            .ag-courses_item {
+                flex-basis: calc(50% - 30px);
+                height: 300px;
+                /* Slightly smaller height on tablets */
+            }
+        }
+
+        @media only screen and (max-width: 767px) {
+            .ag-courses_item {
+                flex-basis: 100%;
+                height: 250px;
+                /* Even smaller height on mobile */
+            }
+
+            .ag-courses-item_title {
+                font-size: 20px;
+                min-height: 50px;
+            }
+        }
+
+        /* Vision Section Styles */
+        .vision-content {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .vision-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #1e88e5;
+        }
+
+        .vision-content .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .vision-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .vision-content {
+                padding: 60px 0;
+            }
+
+            .vision-content .title {
+                font-size: 2rem;
+            }
+
+            .vision-text {
+                font-size: 1.1rem;
+                padding: 0 20px;
+            }
+        }
+
+        /* Add styles for advantage cards */
+        .advantage-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            height: 250px;
+            /* Increased height */
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-card .card-front {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+            padding: 15px;
+        }
+
+        .advantage-card .card-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(30, 136, 229, 0.98), rgba(21, 101, 192, 0.98));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 25px;
+            /* Increased padding */
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            text-align: left;
+        }
+
+        .advantage-card:hover .card-front {
+            transform: translate(-50%, -150%);
+            opacity: 0;
+        }
+
+        .advantage-card:hover .card-hover {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: #1e88e5;
+            margin-bottom: 15px;
+        }
+
+        .advantage-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            /* Reduced margin to give more space to paragraph */
+            color: #fff;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        .advantage-card p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.3px;
+        }
+
+        .advantage-card .card-hover-content {
+            max-width: 95%;
+            /* Increased width for content */
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .advantage-card {
+                height: 280px;
+                /* Even taller on mobile for better text visibility */
+            }
+
+            .advantage-card .card-hover {
+                padding: 25px 20px;
+            }
+
+            .advantage-card h4 {
+                font-size: 1.3rem;
+            }
+
+            .advantage-card p {
+                font-size: 1rem;
+            }
+        }
+
+        /* First Row */
+        .row mb-5 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Maximize Charger Utilization & Revenue */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        /* Reduce Customer Acquisition Costs */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        /* Second Row */
+        .row mb-5 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Enhance Customer Experience & Retention */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        /* Solve the Wallet Fragmentation Problem */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        /* Third Row */
+        .row mb-5 {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Gain Data-Driven Insights */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        /* OEM Integration */
+        .col-lg-6 mb-4 {
+            flex: 1 1 calc(50% - 30px);
+        }
+
+        .row {
+            border: none !important;
+        }
+        
+        .feature-box {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+        }
+
+        .row, .row * {
+            border: none !important;
+        }
+        
+        .feature-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .col-lg-6 {
+            border: none !important;
         }
     </style>
 </head>
 
 <body>
     <div id="wrapper">
-        <div class="float-text show-on-scroll">
+        <!-- <div class="float-text show-on-scroll">
             <span><a href="#">Scroll to top</a></span>
         </div>
-        <div class="scrollbar-v show-on-scroll"></div>
-        
+        <div class="scrollbar-v show-on-scroll"></div> -->
+
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
@@ -50,29 +3127,28 @@
                         <div class="de-flex sm-pt10">
                             <div class="de-flex-col">
                                 <!-- logo begin -->
-                                <div id="logo">
+                                <!-- <div id="logo">
                                     <a href="index.html">
                                         <img class="logo-main" src="images/logo-white.webp" alt="" >
                                         <img class="logo-scroll" src="images/logo-black.webp" alt="" >
                                         <img class="logo-mobile" src="images/logo-white.webp" alt="" >
                                     </a>
-                                </div>
+                                </div> -->
                                 <!-- logo close -->
+                                <div id="logo" class="header-dark">
+                                    <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
+                                        style="    ">
+                                </div>
                             </div>
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
-                                    <li><a class="menu-item" href="index.html">Home</a>
-                                    </li>
-                                  
-                                    <li>
-                                        <a class="menu-item" href="about.html">About</a>
-                                        
-                                    </li>
-                                    <li><a class="menu-item" href="contact.html">Contact us</a></li>
+                                    <li><a class="" href="index.html">Home</a></li>
+                                    <li><a class="" href="#about">About</a></li>
+                                    <li><a class="" href="#contact">Contact us</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
-                                <div class="menu_side_area">          
+                                <div class="menu_side_area">
                                     <a href="contact.html" class="btn-line">Partner with us</a>
                                     <span id="menu-btn"></span>
                                 </div>
@@ -83,6 +3159,7 @@
             </div>
         </header>
         <!-- header close -->
+
         <!-- content begin -->
         <div class="no-bottom no-top" id="content">
 
@@ -90,501 +3167,596 @@
 
             <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
                 <div class="v-center">
-                  <div class="swiper">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                      <!-- Slides -->
-                      <div class="swiper-slide">
-                        <div class="swiper-inner">
-                          <div class="sw-caption">
-                            <div class="container">
-                              <div class="row g-4 align-items-center">
-                                <div class="spacer-double"></div>
-                                <div class="col-lg-6">
-                                  <div class="spacer-single"></div>
-                                  <div class="sw-text-wrapper">
-                                    <div class="subtitle s2 mb-2">
-                                      <i class="icofont-badge id-color me-2"></i>Your One-Stop EV Charging Solution
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="swiper-inner">
+                                    <div class="sw-caption">
+                                        <div class="container">
+                                            <div class="row g-4 align-items-center">
+                                                <div class="spacer-double"></div>
+                                                <div class="hero-container">
+                                                    <div class="text-overlay">
+                                                        <h1>GideON</h1>
+                                                        <p>One App • Any Charger • Anywhere</p>
+                                                        <div>Find, book, charge and pay for EV charging <br> Unifying
+                                                            all major
+                                                            networks in one seamless app.</div>
+                                                        <!-- <div>Revolutionizing EV Charging Infrastructure</div> -->
+                                                    </div>
+                                                    <div class="video-container">
+                                                        <video id="hero-video" autoplay muted class="hero-video"
+                                                            onended="handleVideoEnd()">
+                                                            <source src="./images/video/1.mp4" type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h1 class="slider-title mb-2">Unified EV Charger Platform</h1>
-                                    <h3 class="slider-teaser mb-3">
-                                      Discover. Book. Charge. Seamlessly.
-                                    </h3>
-                                    <div class="slider-extra">
-                                      <div class="row mt-3 g-2 text-center">
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-map-pins"></i>
-                                            <div class="fs-18 fw-bold">500+</div>
-                                            <div class="fs-14 op-5">Chargers Available</div>
-                                          </div>
+                                </div>
+                            </div>
+                            <!-- Slides -->
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <!-- If we need scrollbar -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- New About Us Section -->
+            <section id="about" class="about-section position-relative overflow-hidden">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-content pe-lg-5">
+                                <div class="subtitle bg-grey text-dark  fadeInUp mb-3">About GideON</div>
+                                <h3 class="wow fadeInUp mb-4">Revolutionizing EV Charging Infrastructure</h3>
+                                <p class="wow fadeInUp" data-wow-delay=".2s">
+                                    We unify fragmented EV charging networks into a seamless, all-in-one platform for
+                                    individuals, fleets, and businesses. Our app allows users to locate, book, and pay
+                                    for charging effortlessly, with real-time availability and transparent pricing at
+                                    their fingertips.
+
+                                    With OCPI & OCPP integrations, we ensure direct connectivity to charge point
+                                    operators, delivering maximum reliability and a hassle-free experience. From smart
+                                    charging solutions to data-driven insights, we empower a smarter, more efficient,
+                                    and future-ready EV ecosystem.
+                                </p>
+                                <div class="spacer-20"></div>
+
+                                <!-- Stats in About Section -->
+                                <div class="row g-4">
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="about-stat">
+                                            <h3 class="mb-1"><span class="counter">10</span>+</h3>
+                                            <p class="mb-0">Partnered Charging Networks</p>
                                         </div>
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-clock-time"></i>
-                                            <div class="fs-18 fw-bold">Real-Time</div>
-                                            <div class="fs-14 op-5">Status Updates</div>
-                                          </div>
-                                        </div>
-                                        <div class="col-4">
-                                          <div class="bg-dark rounded-10px lh-1-2em p-2">
-                                            <i class="fs-40 mb-1 id-color icofont-wallet"></i>
-                                            <div class="fs-18 fw-bold">Unified Wallet</div>
-                                            <div class="fs-14 op-5">Across Providers</div>
-                                          </div>
-                                        </div>
-                                      </div>
                                     </div>
-                                    <div class="spacer-30"></div>
-                                    <a class="btn-main mb10 mb-3" href="features.html">Explore Features</a>
-                                  </div>
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="about-stat">
+                                            <h3 class="mb-1"><span class="counter">500</span>+</h3>
+                                            <p class="mb-0">Early Access Users</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="about-stat">
+                                            <h3 class="mb-1"><span class="counter">100</span>%</h3>
+                                            <p class="mb-0">Commitment to Seamless EV Charging</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                  <div class="slider-extra">
-                                    <img
-                                      class="charger-homescreen"
-                                      width="36%"
-                                      height="64%"
-                                      src="./images/screens/ev-platform-dashboard.png"
-                                      class="img-fluid"
-                                      alt="EV Platform Dashboard"
-                                    />
-                                  </div>
-                                </div>
-                                <div class="spacer-single"></div>
-                              </div>
+
                             </div>
-                          </div>
                         </div>
-                      </div>
-                      <!-- Slides -->
+
+                        <div class="col-lg-6">
+                            <div class="about-image-wrapper wow fadeInRight" data-wow-delay=".5s">
+                                <div class="about-image-main position-relative">
+                                    <img src="images/misc/about-main.webp" class="img-fluid rounded-20"
+                                        alt="About GideON">
+                                    <div class="about-floating-card wow fadeInUp" data-wow-delay=".7s">
+                                        <div class="card-icon">
+                                            <i class="icofont-charging-station"></i>
+                                        </div>
+                                        <div class="card-content">
+                                            <h4>500+</h4>
+                                            <p>Charging Stations</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div>
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
-                  </div>
                 </div>
-              </section>
-              
-              <section>
+            </section>
+
+            <!-- Vision Section -->
+            <section class="section-dark text-light position-relative overflow-hidden">
                 <div class="container">
-                    <div class="row g-4 align-items-center">
+                    <div class="row justify-content-center text-center">
                         <div class="col-lg-8">
-                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Powering the Future</div>
-                            <h2 class="wow fadeInUp">Key Features</h2>
-                        </div>
-                        <div class="col-lg-4 text-lg-end">
-                            <a class="btn-text text-dark wow fadeInLeft" href="#">Discover All Features</a>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".3s">
-                                <div class="absolute top-0 end-0">01</div>
-                                <i class="bg-color text-light fs-48 p-2 absolute id-color icofont-charging-station rounded-10px"></i>
-                                <div class="pl-90">
-                                    <h4>Fast Charging</h4>
-                                    <p class="mb-0">Experience industry-leading charging speeds across all compatible chargers.</p>
-                                </div>
-                            </div>
-            
-                            <div class="mb-4 relative wow fadeInRight" data-wow-delay=".5s">
-                                <div class="absolute top-0 end-0">02</div>
-                                <i class="bg-dark text-light fs-48 p-2 absolute id-color icofont-wallet rounded-10px"></i>
-                                <div class="pl-90">
-                                    <h4>Unified Wallet</h4>
-                                    <p class="mb-0">Simplify payments with one wallet for all charging networks.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <img src="images/screens/ev-dashboard.webp" class="img-fluid wow scaleIn" alt="EV Charger Dashboard">
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".3s">
-                                <div class="absolute top-0 start-0">03</div>
-                                <i class="bg-color text-light fs-48 p-2 absolute end-0 id-color icofont-leaf rounded-10px"></i>
-                                <div class="pr-90">
-                                    <h4 class="text-end">Sustainability</h4>
-                                    <p class="text-end mb-0">Drive green with zero-emission charging solutions.</p>
-                                </div>
-                            </div>
-            
-                            <div class="mb-4 relative wow fadeInLeft" data-wow-delay=".5s">
-                                <div class="absolute top-0 start-0">04</div>
-                                <i class="bg-dark text-light fs-48 p-2 absolute end-0 id-color icofont-globe rounded-10px"></i>
-                                <div class="pr-90">
-                                    <h4 class="text-end">Global Reach</h4>
-                                    <p class="text-end mb-0">Access chargers worldwide through our expansive network.</p>
-                                </div>
+                            <div class="vision-content wow fadeInUp">
+                                <h2 class="title mb-4">Our Vision</h2>
+                                <p class="vision-text">
+                                    "We envision a future where EV charging is seamless, intelligent, and universally
+                                    accessible. By integrating all charging networks into one platform, GideON is
+                                    building India's most reliable and user-friendly EV charging ecosystem—eliminating
+                                    fragmentation, ensuring real-time availability, and making every charge effortless."
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <section class="jarallax text-light pt30 pb30">
-                <img src="images/background/gradient-3.webp" class="jarallax-img" alt="">
-                <div class="wow fadeInRight d-flex">
-                    <div class="de-marquee-list wow">
-                        <div class="d-item">
-                            <span class="d-item-txt">Zero Emissions</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Lower Costs</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Instant Torque</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Regenerative Braking</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Quiet Operation</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Advanced Technology</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Longer Range</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Charging Flexibility</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Environmental Benefits</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                            <span class="d-item-txt">Variety of Models</span>
-                            <span class="d-item-display">
-                                <i class="d-item-block"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="jarallax">
-                <img src="images/background/gradient-2.webp" class="jarallax-img" alt="">
-                <div class="container">
-                    <div class="row g-4 gx-5">
-                        <div class="col-lg-4">
-                            <div class="subtitle bg-white text-dark wow fadeInUp mb-3">Charge Ahead</div>
-                            <h2 class="wow fadeInUp">For a Sustainable Future</h2>
-                        </div>
-            
-                        <div class="col-lg-4">
-                            <h4 class="mb-4 wow fadeInRight">Why Choose Us</h4>
-                            <ol class="ol-style-1">
-                                <li class="wow fadeInUp" data-wow-delay=".2s">Comprehensive EV charger integration.</li>
-                                <li class="wow fadeInUp" data-wow-delay=".4s">Seamless payment and booking features.</li>
-                                <li class="wow fadeInUp" data-wow-delay=".6s">User-friendly platform for all EV owners.</li>
-                            </ol>
-                        </div>
-            
-                        <div class="col-lg-4">
-                            <h4 class="mb-4 wow fadeInRight">Our Advantages</h4>
-                            <ol class="ol-style-1 dark">
-                                <li class="wow fadeInUp" data-wow-delay=".2s">Global network access for EV chargers.</li>
-                                <li class="wow fadeInUp" data-wow-delay=".4s">Advanced features like real-time updates.</li>
-                                <li class="wow fadeInUp" data-wow-delay=".6s">Environmentally friendly charging options.</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container">
-                    <div class="row align-items-center g-4 gx-5">
-                        <div class="col-lg-8">
-                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Welcome</div>
-                            <h2 class="wow fadeInUp">Your Gateway to Seamless EV Charging</h2>
-                        </div>
-                        <div class="col-lg-4 text-lg-end">
-                            <a class="btn-text text-dark wow fadeInLeft" href="#">Explore Platform Features</a>
-                        </div>
-                        <div class="col-lg-4 wow fadeInRight" data-wow-delay=".2s">
-                            <div class="relative">
-                                <div class="absolute top-0 end-0">01</div>
-                                <a href="chargers.html">
-                                    <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-charging-station"></i>
-                                    <h4>Discover EV Chargers</h4>
-                                </a>
-                                <p>Find chargers near you with ease. Our platform aggregates all EV charging stations to provide you with real-time availability and location details.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInRight" data-wow-delay=".4s">
-                            <div class="relative">
-                                <div class="absolute top-0 end-0">02</div>
-                                <a href="schedule.html">
-                                    <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-calendar"></i>
-                                    <h4>Book Your Slot</h4>
-                                </a>
-                                <p>Plan your charging stops ahead. Reserve a slot at your preferred station and eliminate wait times during your journeys.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 wow fadeInRight" data-wow-delay=".6s">
-                            <div class="relative">
-                                <div class="absolute top-0 end-0">03</div>
-                                <a href="wallet.html">
-                                    <i class="bg-color text-light p-3 rounded-20px fs-56 mb-4 icofont-wallet"></i>
-                                    <h4>Unified Wallet</h4>
-                                </a>
-                                <p>Pay seamlessly across all charging stations with a single wallet. No need for multiple accounts or apps!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section class="relative overflow-hidden bg-dark text-light">
+            <!-- Slideshow Section -->
+            <section class="key-features-section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 offset-lg-6">
-                            <div class="ps-lg-5 ps-0">
-                                <i class="icofont-quote-left id-color fs-40 mb-4 wow fadeInUp"></i>
-                                <h3 class="mb-4 wow fadeInUp">"Simplifying EV charging is not just about convenience, it's about empowering a greener future for everyone."</h3>
-                                <span class="wow fadeInUp">Relentless Pursuit Team</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 absolute h-100 mh-500px top-0 bg-dark" data-bgimage="url(images/background/ev-mobility.webp)">
-                </div>
-            </section>
-            
-            <section class="jarallax">
-                <img src="images/background/gradient-2.webp" class="jarallax-img" alt="">
-                <div class="container">
-                    <div class="row g-4 gx-5 align-items-center">
                         <div class="col-lg-12">
-                            <div class="subtitle bg-color text-light wow fadeInUp mb-3">EV Platform Features</div>
-                            <h2 class="wow fadeInUp">Efficiency & Simplicity</h2>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".0s">
-                                <img src="images/misc/realtime.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Real-Time Updates</h5>
-                                <p class="small mb-1 text-dark">Stay informed with real-time charger availability.</p>
-                            </div>
-                            <p>Access live data on charging points to ensure smooth travel with zero hassle.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".2s">
-                                <img src="images/misc/pricing.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Price Comparison</h5>
-                                <p class="small mb-1 text-dark">Compare costs and choose the most economical option.</p>
-                            </div>
-                            <p>We provide transparent pricing for all listed chargers on the platform.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".4s">
-                                <img src="images/misc/map.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Interactive Map</h5>
-                                <p class="small mb-1 text-dark">Locate chargers on our intuitive map interface.</p>
-                            </div>
-                            <p>Plan your trips with our detailed map showing station types and features.</p>
-                        </div>
-            
-                        <div class="col-lg-3">
-                            <div class="bg-white p-2 pb-0 mb-4 rounded-10 bottom-0 text-center z-index-2 wow scaleIn" data-wow-delay=".6s">
-                                <img src="images/misc/quick-access.webp" class="img-fluid rounded-10 mb-2" alt="">
-                                <h5 class="no-bottom text-dark">Quick Access</h5>
-                                <p class="small mb-1 text-dark">Save your favorite stations for one-click access.</p>
-                            </div>
-                            <p>Make EV charging even faster with personalized shortcuts.</p>
+                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Why GideON?</div>
+                            <h2 class="wow fadeInUp mb-4">Revolutionizing EV Charging</h2>
                         </div>
                     </div>
-                </div>
-            </section>
-            
-            <section class="bg-dark section-dark text-light pt60 pb60 jarallax">
-                <img src="images/background/gradient-3.webp" class="jarallax-img" alt="">
-                <div class="container">
-                    <div class="row g-4">
-                        <div class="col-md-3 col-sm-6 mb-sm-30">
-                            <div class="de_count pl-50 fs-15 wow fadeInRight" data-wow-delay=".0s">
-                                <i class="icofont-users-alt-1 absolute fs-40 start-0 id-color mt-1"></i>
-                                <h3 class="fs-40"><span class="timer fs-40" data-to="10000" data-speed="3000">0</span>+</h3>
-                                Satisfied Users
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-sm-30">
-                            <div class="de_count pl-50 fs-15 wow fadeInRight" data-wow-delay=".2s">
-                                <i class="icofont-charging-station absolute fs-40 start-0 id-color mt-1"></i>
-                                <h3 class="fs-40"><span class="timer fs-40" data-to="500" data-speed="3000">0</span>+</h3>
-                                Charging Stations
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-sm-30">
-                            <div class="de_count pl-50 fs-15 wow fadeInRight" data-wow-delay=".4s">
-                                <i class="icofont-light-bulb absolute fs-40 start-0 id-color mt-1"></i>
-                                <h3 class="fs-40"><span class="timer fs-40" data-to="150" data-speed="3000">0</span>+</h3>
-                                Partner Networks
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 mb-sm-30">
-                            <div class="de_count pl-50 fs-15 wow fadeInRight" data-wow-delay=".6s">
-                                <i class="icofont-globe absolute fs-40 start-0 id-color mt-1"></i>
-                                <h3 class="fs-40"><span class="timer fs-40" data-to="25" data-speed="3000">0</span>+</h3>
-                                Countries Supported
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="jarallax bg-color text-light pt30 pb30">
-                <div class="wow fadeInRight d-flex">
-                  <div class="de-marquee-list wow">
-                    <div class="d-item">
-                      <span class="d-item-txt">Zero Emissions</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Lower Costs</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Instant Torque</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Regenerative Braking</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Quiet Operation</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Advanced Technology</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Longer Range</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Charging Flexibility</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Environmental Benefits</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                      <span class="d-item-txt">Variety of Models</span>
-                      <span class="d-item-display">
-                        <i class="d-item-block bg-white"></i>
-                      </span>
-                     </div>
-                  </div>
-                </div>
-            </section>
-
-        </div>
-        <!-- content close -->
-        
-        <!-- footer begin -->
-        <footer class="section-dark">
-            <div class="container">
-                <div class="row gx-5">
-                    <div class="col-lg-4 col-sm-6">
-                        <img src="images/logo-white.webp" alt="" >
-                        <div class="spacer-20"></div>
-                        <p>Autoev are leading the charge towards a more sustainable future, offering a thrilling blend of cutting-edge technology, zero emissions, and unparalleled efficiency. Our journey towards a cleaner, greener world with electric vehicles leading the way.</p>
-
-                        <div class="social-icons mb-sm-30">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                        <div class="row">
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Company</h5>
-                                    <ul>                                        
-                                        <li><a href="about.html">About Us</a></li>
-                                        <li><a href="history.html">History</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li><a href="careers.html">Careers</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Our Products</h5>
-                                    <ul>
-                                        <li><a href="vehicle-single-1.html">Autoev R100</a></li>
-                                        <li><a href="vehicle-single-2.html">Autoev R200</a></li>
-                                        <li><a href="vehicle-single-3.html">Autoev R300</a></li>
-                                        <li><a href="vehicles.html">All Vehicles</a></li>
-                                        <li><a href="dealers.html">Dealers</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                        <div class="widget">
-                            <div class="fw-bold text-white"><i class="icofont-location-pin me-2 id-color"></i>Showroom Location</div>
-                            100 S Main St, Los Angeles, CA
-
-                            <div class="spacer-20"></div>
-
-                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Send a Message</div>
-                            contact@autoev.com     
-
-                            <div class="spacer-20"></div>
-
-                            <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Make a Phone Call</div>
-                            +929 333 9296 / +929 333 9297                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="subfooter">
-                <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="de-flex">
-                                <div class="de-flex-col">
-                                    Copyright 2025 - Autoev by Designesia
+                        <div class="col-lg-12">
+                            <fieldset class="slideshow">
+                                <!-- Navigation Buttons -->
+                                <div class="slide-buttons">
+                                    <label class="slide-button" for="slideCheckbox1">
+                                        <span>Unified Platform</span>
+                                    </label>
+                                    <label class="slide-button" for="slideCheckbox2">
+                                        <span>Smart Payment</span>
+                                    </label>
+                                    <label class="slide-button" for="slideCheckbox3">
+                                        <span>Real Time</span>
+                                    </label>
                                 </div>
-                                <ul class="menu-simple">
-                                    <li><a href="#">Terms &amp; Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
+
+                                <!-- Slide 1 Content -->
+                                <input type="radio" id="slideCheckbox1" name="slide" checked>
+                                <div class="slide">
+                                    <div class="slide__content">
+                                        <h3>One Platform for All EV Charging</h3>
+                                        <p>Access any charging network seamlessly.</p>
+                                        <p>Unified experience across all networks!</p>
+                                        <div class="mt-4">
+                                            <i
+                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-connection"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 Content -->
+                                <input type="radio" id="slideCheckbox2" name="slide">
+                                <div class="slide">
+                                    <div class="slide__content">
+                                        <h3>Seamless Payment Solutions</h3>
+                                        <p>Multiple payment options including UPI, cards & wallets.</p>
+                                        <p>One-click payments for faster charging.</p>
+                                        <div class="mt-4">
+                                            <i
+                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-wallet"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 Content -->
+                                <input type="radio" id="slideCheckbox3" name="slide">
+                                <div class="slide">
+                                    <div class="slide__content">
+                                        <h3>Live Status Updates</h3>
+                                        <p>Real-time availability and status tracking.</p>
+                                        <p>Find the nearest available charger instantly.</p>
+                                        <div class="mt-4">
+                                            <i
+                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-location-pin"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="ag-format-container">
+                                <div class="ag-courses_box">
+                                    <!-- Card 1 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Any Charger network, only One App
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                No more switching between multiple apps to find and use chargers. GideON
+                                                integrates all major EV charging networks into a single platform for
+                                                easy access.
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Seamless Network Integration
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                We bring together all OEMs and charging providers under one umbrella.
+                                                Users can charge at any station without worrying about compatibility
+                                                issues.
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card 3 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Unified Wallet
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                Instead of keeping money locked in separate apps, GideON provides one
+                                                wallet for all transactions. Users can track, manage, and spend their
+                                                balance efficiently across all networks.
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card 4 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Multiple Payment Options
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                GideON ensures flexible, secure payments with no limits. Users pay
+                                                seamlessly via UPI, cards, or wallets—no forced top-ups or restrictions.
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card 5 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Smart Search & Live Availability
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                Real-time charger status across OEMs helps users locate available
+                                                stations seamlessly. Intelligent filters across OEMS allow users to
+                                                search by distance, charger type, and price.
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Card 6 -->
+                                    <div class="ag-courses_item">
+                                        <a href="#" class="ag-courses-item_link">
+                                            <div class="ag-courses-item_bg"></div>
+                                            <div class="ag-courses-item_title">
+                                                Hassle-Free charger bookings
+                                            </div>
+                                            <div class="ag-courses-item_date-box">
+                                                Users can pre-book charging slots to avoid waiting in line. We can
+                                                switch to nearby charger across OEMS in case of issues. Booking
+                                                reminders ensure users never miss a slot.
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+            <div id="featuresSection">
+                <div class="container">
+                    <!-- Section Header -->
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <h2 class="title mb-4">Partnership Benefits</h2>
+                            <h3 class="subtitle mb-5">Why Players will Partner With Us</h3>
+                        </div>
+                    </div>
+
+                    <!-- First Row -->
+                    <div class="row mb-5">
+                        <!-- Maximize Charger Utilization & Revenue -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">Maximize Charger Utilization & Revenue</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-chart-growth text-primary me-3"></i>
+                                        More Footfall, More Charging Sessions – GideON's aggregated platform funnels more users to your chargers, ensuring higher utilization.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-price text-primary me-3"></i>
+                                        Optimized Pricing with Market Insights – While we never share one provider's data with another, our platform helps you understand overall demand trends, allowing you to adjust pricing smartly.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-money text-primary me-3"></i>
+                                        Higher charger occupancy, more revenue per station, and smarter pricing strategies.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Reduce Customer Acquisition Costs -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">Reduce Customer Acquisition Costs</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-users text-primary me-3"></i>
+                                        Instant Access to a Large EV User Base – Instead of spending heavily on marketing your standalone app, your chargers are automatically visible to thousands of EV drivers on GideON.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-brand-windows text-primary me-3"></i>
+                                        Increased Brand Exposure – Users discover your charging stations through our unified platform, meaning you gain new customers without additional marketing costs.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-money-bag text-primary me-3"></i>
+                                        Lower customer acquisition costs and increased bookings without extra ad spend.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="row mb-5">
+                        <!-- Enhance Customer Experience & Retention -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">Enhance Customer Experience & Retention</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-search-map text-primary me-3"></i>
+                                        Seamless Charger Discovery & Booking – Users can easily find, book, and pay for your chargers without app-hopping, increasing the likelihood of repeat visits.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-data text-primary me-3"></i>
+                                        Data-Backed Service Improvements – Without sharing individual network data, GideON provides general industry trends, helping you refine charger availability, session times, and user experience.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-star text-primary me-3"></i>
+                                        Your Benefit: Happier customers, more repeat users, and improved charger efficiency.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Solve the Wallet Fragmentation Problem -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">Solve the Wallet Fragmentation Problem</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-wallet text-primary me-3"></i>
+                                        One Wallet for All Charging Networks – Users no longer have to maintain separate wallets, making payments across networks seamless and convenient.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-speed-meter text-primary me-3"></i>
+                                        Faster Transactions = More Sessions – A hassle-free payment experience means users are more likely to pick chargers available on GideON over standalone networks.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-check-circled text-primary me-3"></i>
+                                        More completed charging sessions and a frictionless payment experience that keeps customers coming back.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Third Row -->
+                    <div class="row mb-5">
+                        <!-- Gain Data-Driven Insights -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">Gain Data-Driven Insights</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-chart-histogram text-primary me-3"></i>
+                                        Intelligent Demand Prediction – GideON provides macro-level charging trends to help partners identify high-demand locations and peak usage times.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-location-pin text-primary me-3"></i>
+                                        Smarter Expansion Planning – Without exposing competitor data, you get industry-wide insights to strategically place new chargers where they'll be most profitable.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-chart-line text-primary me-3"></i>
+                                        Higher ROI on new charger installations and smarter network expansion.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- OEM Integration -->
+                        <div class="col-lg-6 mb-4">
+                            <div class="feature-box">
+                                <h3 class="mb-4">OEM Integration Benefits</h3>
+                                <ul class="feature-list">
+                                    <li>
+                                        <i class="icofont-connection text-primary me-3"></i>
+                                        One Charging Solution for All Networks – GideON enables your customers to access and pay for any charger without worrying about network compatibility.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-car text-primary me-3"></i>
+                                        Embedded Charging for a Better Experience – Integrate real-time charger availability, navigation, and payments into your vehicle's infotainment system.
+                                    </li>
+                                    <li>
+                                        <i class="icofont-badge text-primary me-3"></i>
+                                        A superior EV ownership experience for your customers, increased brand differentiation, and a competitive edge in the growing EV market.
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
-        </footer>        <!-- footer close -->
+        </div>
+    </div>
+    <section class="jarallax bg-dark text-light" style="background-color: #111111;">
+        <img src="images/background/gradient-3.webp" class="jarallax-img" alt="">
+        <div class="container">
+            <div class="row g-4 gx-5">
+                <div class="col-lg-12 text-center mb-5">
+                    <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Investors</div>
+                    <h2 class="wow fadeInUp mb-4">Invest in the future of EV charging</h2>
+                    <div class="col-lg-8 mx-auto">
+                        <p class="lead wow fadeInUp mb-4">Invest in GideON, India's fastest-growing EV charging
+                            aggregator platform. Our innovative solution is transforming the EV charging
+                            landscape by unifying fragmented charging networks into a seamless experience for EV
+                            owners.</p>
+                        <p class="wow fadeInUp">With a vision to build a rapidly expanding user base,
+                            establishing strategic partnerships with major charging networks, and develop a
+                            scalable technology infrastructure, GideON aims to become a compelling investment
+                            opportunity in India's booming EV sector. Our data-driven approach and first-mover
+                            advantage will position us for exponential growth in this $10B+ market.</p>
+                        <p class="wow fadeInUp mt-4">Join us in building a future where one app connects you to
+                            any charger, anywhere—making EV charging seamless, smart, and accessible.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="spacer-double"></div>
+        </div>
+    </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-2 mb-lg-4">
+                <div class="col-lg-8 col-xxl-7">
+                    <span class="text-muted">Let's Connect</span>
+                    <h2 class="display-5 fw-bold mb-3">Request a Callback</h2>
+                    <p class="lead">Have questions about GideON? Fill in your details, and our team will get
+                        back to you soon!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <input class="form-control bg-light" placeholder="Your name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-4">
+                                    <input class="form-control bg-light" placeholder="Your phone number" type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer begin -->
+    <footer class="section-dark">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-sm-6">
+                    <div id="logo" class="header-dark">
+                        <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
+                            style="min-height: 60px;">
+                    </div>
+                    <div class="spacer-20"></div>
+                    <p>GideON is revolutionizing EV charging by providing a unified platform that connects all
+                        charging networks in one seamless experience. One app, any charger, anywhere—powering
+                        the future of electric mobility.</p>
+                    <div class="social-icons mb-sm-30">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="widget">
+                                <h5>Company</h5>
+                                <ul>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="mission.html">Our Mission</a></li>
+                                    <li><a href="careers.html">Careers</a></li>
+                                    <li><a href="partners.html">Partners</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="widget">
+                                <h5>Our Services</h5>
+                                <ul>
+                                    <li><a href="charging-locations.html">Find a Charger</a></li>
+                                    <li><a href="booking.html">Book a Charging Slot</a></li>
+                                    <li><a href="payment.html">Seamless Payments</a></li>
+                                    <li><a href="fleet.html">Fleet Solutions</a></li>
+                                    <li><a href="api.html">API for Businesses</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                    <div class="widget">
+
+                        <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Email Us
+                        </div>
+                        connect@gideon.org.in
+                        <div class="spacer-20"></div>
+                        <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Call Us</div>
+                        +91 9090909090/ +91 9090909090
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex">
+                            <div class="de-flex-col">
+                                Copyright 2025 - GideON
+                            </div>
+                            <ul class="menu-simple">
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- footer close -->
     </div>
 
-    <div id="buy-now" class="show-on-scroll">
-        <a class="btn-buy" href="https://themeforest.net/cart/configure_before_adding/52788184" target="_blank">Buy on <img src="demo/envato.png" class="" alt=""></a>
-    </div>
-    
     <!-- Javascript Files
     ================================================== -->
     <script src="js/plugins.js"></script>
@@ -592,9 +3764,174 @@
     <script src="js/swiper.js"></script>
     <script src="js/custom-marquee.js"></script>
     <script src="js/custom-swiper-2.js"></script>
+    <script>
+        function handleVideoEnd() {
+            const video = document.getElementById('hero-video');
+
+            // Keep the last frame visible
+            video.currentTime = video.duration - 0.1;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                effect: 'fade', // Add fade effect
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Initialize the feature slider
+            var featureSwiper = new Swiper('.feature-swiper', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                loop: true,
+                speed: 800,
+                slidesPerGroup: 1,
+                loopedSlides: 8,
+                allowTouchMove: true, // Enable touch/click navigation
+                watchSlidesProgress: true, // Add this for better slide tracking
+                normalizeSlideIndex: true, // Add this for proper slide indexing
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: true, // Pause on user interaction
+                    pauseOnMouseEnter: true
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    type: 'bullets',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    hideOnClick: false, // Ensure navigation stays visible
+                    disabledClass: 'swiper-button-disabled'
+                },
+                on: {
+                    init: function () {
+                        this.slideTo(0, 0);
+                    },
+                    click: function (swiper, event) {
+                        // Handle click events if needed
+                        swiper.slideNext();
+                    }
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30
+                    }
+                }
+            });
+
+            // Add this to ensure proper initialization
+            featureSwiper.update();
+
+            // Function to equalize slide heights
+            function equalizeSlideHeights() {
+                setTimeout(function () {
+                    const slides = document.querySelectorAll('.feature-card');
+                    let maxHeight = 0;
+
+                    // Reset heights first
+                    slides.forEach(slide => {
+                        slide.style.height = 'auto';
+                    });
+
+                    // Find max height
+                    slides.forEach(slide => {
+                        maxHeight = Math.max(maxHeight, slide.offsetHeight);
+                    });
+
+                    // Set all slides to max height
+                    slides.forEach(slide => {
+                        slide.style.height = maxHeight + 'px';
+                    });
+
+                    // Update swiper
+                    featureSwiper.update();
+                }, 100);
+            }
+
+            // Ensure autoplay is working by manually starting it after a delay
+            setTimeout(function () {
+                if (featureSwiper && featureSwiper.autoplay) {
+                    featureSwiper.autoplay.start();
+                    console.log('Autoplay started manually');
+
+                    // Update swiper to ensure proper dimensions
+                    featureSwiper.update();
+                }
+            }, 500);
+
+            // Add event listeners to ensure autoplay continues after user interaction
+            document.querySelector('.feature-swiper').addEventListener('mouseenter', function () {
+                featureSwiper.autoplay.stop();
+            });
+
+            document.querySelector('.feature-swiper').addEventListener('mouseleave', function () {
+                featureSwiper.autoplay.start();
+            });
+
+            // Force update on window resize
+            window.addEventListener('resize', function () {
+                equalizeSlideHeights();
+            });
+        });
+
+        // Add scroll progress functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.querySelector('.scrollbar-v').style.setProperty('--scroll-height', `${scrolled}%`);
+            });
+        });
+
+        // Smooth scroll function
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('#mainmenu a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 
 </body>
 
 
 <!-- Mirrored from madebydesignesia.com/themes/autoev/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 24 Jan 2025 16:09:53 GMT -->
+
 </html>
