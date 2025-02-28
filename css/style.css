@@ -751,7 +751,7 @@ header .header-col.mid .social-icons {
   font-size: 14px;
   margin: 0 auto;
   float: none;
-  counter-reset: my-awesome-counter;
+  /* counter-reset: my-awesome-counter; */
   font-family: var(--title-font);
 }
 
@@ -797,9 +797,9 @@ header.header-s2 #mainmenu>li {
   margin-right: 0px;
 }
 
-#mainmenu>li {
+/* #mainmenu>li {
   counter-increment: my-awesome-counter;
-}
+} */
 
 /*
 #mainmenu>li::before {
@@ -819,7 +819,7 @@ header.smaller #mainmenu>li::before{
 
 
 #mainmenu>li::before {
-  content: counter(my-awesome-counter) ' —';
+  /* content: counter(my-awesome-counter) ' —'; */
   right: 8px;
   top: 5px;
   color:var(--primary-color);
@@ -834,7 +834,7 @@ header.smaller #mainmenu>li::before{
 
 #mainmenu>li.has-child:after {
   font-family: FontAwesome;
-  content: "\f078";
+  /* content: "\f078"; */
   padding-left: 5px;
   font-size: 8px;
   position: relative;
