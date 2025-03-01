@@ -118,8 +118,7 @@
             height: 65px;
             background: linear-gradient(to right, #2a2a2a, #1a1a1a);
             border-radius: 2px 0 0 2px;
-            box-shadow
-                -1px 0 1px rgba(0, 0, 0, 0.5),
+            box-shadow:1px 0 1px rgba(0, 0, 0, 0.5),
                 inset 1px 0 1px rgba(255, 255, 255, 0.05);
         }
 
@@ -4484,7 +4483,7 @@
 
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/plugins.js"></scrip
+    <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
     <script src="js/swiper.js"></script>
     <script src="js/custom-marquee.js"></script>
@@ -4519,112 +4518,115 @@
                 },
             });
 
-            // Initialize the feature slider
-            var featureSwiper = new Swiper('.feature-swiper', {
-                slidesPerView: 3,
-                spaceBetween: 30,
-                loop: true,
-                speed: 800,
-                slidesPerGroup: 1,
-                loopedSlides: 8,
-                allowTouchMove: true, // Enable touch/click navigation
-                watchSlidesProgress: true, // Add this for better slide tracking
-                normalizeSlideIndex: true, // Add this for proper slide indexing
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: true, // Pause on user interaction
-                    pauseOnMouseEnter: true
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    type: 'bullets',
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                    hideOnClick: false, // Ensure navigation stays visible
-                    disabledClass: 'swiper-button-disabled'
-                },
-                on: {
-                    init: function () {
-                        this.slideTo(0, 0);
+              // Initialize the feature slider with error handling
+              const featureSwiperElement = document.querySelector('.feature-swiper');
+            if (featureSwiperElement) {
+                var featureSwiper = new Swiper('.feature-swiper', {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                    loop: true,
+                    speed: 800,
+                    slidesPerGroup: 1,
+                    loopedSlides: 8,
+                    allowTouchMove: true,
+                    watchSlidesProgress: true,
+                    normalizeSlideIndex: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: true,
+                        pauseOnMouseEnter: true
                     },
-                    click: function (swiper, event) {
-                        // Handle click events if needed
-                        swiper.slideNext();
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        type: 'bullets',
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        hideOnClick: false,
+                        disabledClass: 'swiper-button-disabled'
+                    },
+                    on: {
+                        init: function () {
+                            this.slideTo(0, 0);
+                        },
+                        click: function (swiper, event) {
+                            swiper.slideNext();
+                        }
+                    },
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 20
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 25
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30
+                        }
                     }
-                },
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 25
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    }
+                });
+
+                // Add this to ensure proper initialization
+                featureSwiper.update();
+                
+                // Function to equalize slide heights
+                function equalizeSlideHeights() {
+                    setTimeout(function () {
+                        const slides = document.querySelectorAll('.feature-card');
+                        if (!slides.length) return;
+                        
+                        let maxHeight = 0;
+                        
+                        // Reset heights first
+                        slides.forEach(slide => {
+                            slide.style.height = 'auto';
+                        });
+                        
+                        // Find max height
+                        slides.forEach(slide => {
+                            maxHeight = Math.max(maxHeight, slide.offsetHeight);
+                        });
+                        
+                        // Set all slides to max height
+                        slides.forEach(slide => {
+                            slide.style.height = maxHeight + 'px';
+                        });
+                        
+                        // Update swiper
+                        featureSwiper.update();
+                    }, 100);
                 }
-            });
-
-            // Add this to ensure proper initialization
-            featureSwiper.update();
-
-            // Function to equalize slide heights
-            function equalizeSlideHeights() {
+                
+                // Ensure autoplay is working by manually starting it after a delay
                 setTimeout(function () {
-                    const slides = document.querySelectorAll('.feature-card');
-                    let maxHeight = 0;
-
-                    // Reset heights first
-                    slides.forEach(slide => {
-                        slide.style.height = 'auto';
-                    });
-
-                    // Find max height
-                    slides.forEach(slide => {
-                        maxHeight = Math.max(maxHeight, slide.offsetHeight);
-                    });
-
-                    // Set all slides to max height
-                    slides.forEach(slide => {
-                        slide.style.height = maxHeight + 'px';
-                    });
-
-                    // Update swiper
-                    featureSwiper.update();
-                }, 100);
-            }
-
-            // Ensure autoplay is working by manually starting it after a delay
-            setTimeout(function () {
-                if (featureSwiper && featureSwiper.autoplay) {
+                    if (featureSwiper && featureSwiper.autoplay) {
+                        featureSwiper.autoplay.start();
+                        console.log('Autoplay started manually');
+                        
+                        // Update swiper to ensure proper dimensions
+                        featureSwiper.update();
+                    }
+                }, 500);
+                
+                // Add event listeners to ensure autoplay continues after user interaction
+                featureSwiperElement.addEventListener('mouseenter', function () {
+                    featureSwiper.autoplay.stop();
+                });
+                
+                featureSwiperElement.addEventListener('mouseleave', function () {
                     featureSwiper.autoplay.start();
-                    console.log('Autoplay started manually');
-
-                    // Update swiper to ensure proper dimensions
-                    featureSwiper.update();
-                }
-            }, 500);
-
-            // Add event listeners to ensure autoplay continues after user interaction
-            document.querySelector('.feature-swiper').addEventListener('mouseenter', function () {
-                featureSwiper.autoplay.stop();
-            });
-            
-            document.querySelector('.feature-swiper').addEventListener('mouseleave', function () {
-                featureSwiper.autoplay.start();
-            });
-            
-
-            // Force update on window resize
-            window.addEventListener('resize', function () {
-                equalizeSlideHeights();
-            });
+                });
+                
+                // Force update on window resize
+                window.addEventListener('resize', function () {
+                    equalizeSlideHeights();
+                });
+            }
         });
 
         // Add scroll progress functionality
