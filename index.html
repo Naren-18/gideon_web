@@ -41,7 +41,7 @@
             height: 500px;
             background: linear-gradient(145deg, #2c2c2c, #1c1c1c);
             border-radius: 45px;
-            box-shadow:
+            box-shadow: 
                 -3px 3px 15px rgba(0, 0, 0, 0.5),
                 0 0 0 2px rgba(28, 28, 28, 0.6),
                 inset 0 0 3px rgba(255, 255, 255, 0.05);
@@ -88,7 +88,7 @@
             background: #000;
             border-radius: 20px;
             z-index: 3;
-            box-shadow:
+            box-shadow: 
                 0 0 0 2px rgba(28, 28, 28, 0.8),
                 inset 0 0 2px rgba(255, 255, 255, 0.1);
             overflow: hidden;
@@ -104,7 +104,7 @@
             height: 8px;
             background: #1a1a1a;
             border-radius: 50%;
-            box-shadow:
+            box-shadow: 
                 inset 0 0 2px #000,
                 0 0 0 2px rgba(255, 255, 255, 0.05);
         }
@@ -118,7 +118,7 @@
             height: 65px;
             background: linear-gradient(to right, #2a2a2a, #1a1a1a);
             border-radius: 2px 0 0 2px;
-            box-shadow:
+            box-shadow: 
                 -1px 0 1px rgba(0, 0, 0, 0.5),
                 inset 1px 0 1px rgba(255, 255, 255, 0.05);
         }
@@ -139,7 +139,7 @@
             height: 30px;
             background: linear-gradient(to left, #2a2a2a, #1a1a1a);
             border-radius: 0 2px 2px 0;
-            box-shadow:
+            box-shadow: 
                 1px 0 1px rgba(0, 0, 0, 0.5),
                 inset -1px 0 1px rgba(255, 255, 255, 0.05);
         }
@@ -157,7 +157,7 @@
             height: 20px;
             background: linear-gradient(to left, #2a2a2a, #1a1a1a);
             border-radius: 0 2px 2px 0;
-            box-shadow:
+            box-shadow: 
                 1px 0 1px rgba(0, 0, 0, 0.5),
                 inset -1px 0 1px rgba(255, 255, 255, 0.05);
         }
@@ -169,7 +169,7 @@
             border-radius: 35px;
             object-fit: cover;
             position: relative;
-            box-shadow:
+            box-shadow: 
                 inset 0 0 2px rgba(0, 0, 0, 0.8),
                 0 0 0 1px rgba(0, 0, 0, 0.15);
         }
@@ -189,8 +189,8 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(145deg,
-                    rgba(255, 255, 255, 0.03) 0%,
-                    transparent 30%,
+                rgba(255, 255, 255, 0.03) 0%,
+                transparent 30%,
                     rgba(0, 0, 0, 0.1) 100%);
             border-radius: 45px;
             z-index: 1;
@@ -200,141 +200,132 @@
         .hero-container {
             position: relative;
             width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
             overflow: hidden;
+            background-color: #000;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding: 2rem 1rem;
         }
 
         .video-container {
-            position: absolute;
-            top: 0;
-            left: 30%;
-            /* Push video to the right side */
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+            width: 85%;
+            margin: 0 auto;
+            order: 1;
         }
 
+        /* Keep only this latest version of hero-video */
         .hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform: none;
+            width: 184%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
         }
 
-        /* Add this to ensure video container maintains its dimensions */
-        .video-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Update text overlay styling */
         .text-overlay {
-            position: absolute;
-            text-align: left;
-            max-width: 800px;
+            width: 100%;
+            order: 2;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            background: none;
+            margin-top: 2rem;
             z-index: 2;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 20px;
-            pointer-events: none;
         }
 
         .text-overlay h1 {
-            font-size: 4.5em;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
         }
 
         .text-overlay p {
-            font-size: 2em;
-            color: rgba(255, 255, 255, 0.95);
-            white-space: nowrap;
-            letter-spacing: 0.05em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
         .text-overlay div {
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 10px;
-            max-width: 600px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            line-height: 1.5;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #fff;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
-        /* Remove any animation classes that might interfere */
-        .text-overlay .subtitle.wow {
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-
-        /* Responsive adjustments */
+        /* Mobile Styles - Updated */
         @media (max-width: 768px) {
             .hero-container {
+                min-height: auto;
+                padding: 40px 0;
+            }
+
+            .content-wrapper {
                 flex-direction: column;
-                min-height: 100vh;
-                padding: 0;
-                /* Remove default padding */
+                padding: 20px;
+                gap: 30px;
             }
 
             .video-container {
-                position: relative;
-                left: 0;
-                /* Reset position for mobile */
-                height: 50vh;
-                width: 100%;
+                width: 75%; /* Reduced to 75% of original size */
+                height: auto;
+                aspect-ratio: 9/16;
                 order: 1;
-                overflow: hidden;
-                margin-top: 60px;
-                /* Add space at the top for mobile */
+                margin: 0 auto; /* Center the video */
             }
 
             .hero-video {
-                position: relative;
-                height: 100%;
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
-                left: 0;
-                top: 0;
-                transform: none;
-                padding-top: 20px;
-                /* Add some padding to the video */
+                border-radius: 15px;
             }
 
             .text-overlay {
-                position: relative;
-                order: 2;
-                left: 0;
-                top: 0;
-                transform: none;
-                text-align: center;
-                padding: 30px 20px;
                 width: 100%;
+                text-align: center;
+                padding: 0;
+                order: 2;
+                position: relative;
+                background: none;
+                margin-top: 20px;
             }
 
             .text-overlay h1 {
-                font-size: 2.5em;
-                margin-bottom: 15px;
-            }
+                font-size: 2.2rem;
+                margin-bottom: 0.8rem;
+        }
 
-            .text-overlay p {
-                font-size: 1.2em;
-                white-space: normal;
+        .text-overlay p {
+                font-size: 1rem;
+                margin-bottom: 0.8rem;
             }
 
             .text-overlay div {
-                font-size: 1em;
-                margin: 0 auto;
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .video-container {
+                width: 75%; /* Keep consistent with larger mobile view */
+            }
+
+            .hero-container {
+                padding: 30px 0;
+            }
+
+            .content-wrapper {
+                padding: 15px;
+                gap: 20px;
             }
         }
 
@@ -345,7 +336,7 @@
         }
 
         /* Apply Inter font to all elements */
-        body,
+        body, 
         h1,
         h2,
         h3,
@@ -526,7 +517,7 @@
                 text-align: center;
                 margin-bottom: 50px;
             }
-
+            
             .about-floating-card {
                 right: 0;
             }
@@ -1265,7 +1256,7 @@
                 height: 800px;
                 /* Much taller slideshow on mobile to prevent overlap */
             }
-
+            
             .slide {
                 width: 100%;
                 /* Full width slides on mobile */
@@ -1275,7 +1266,7 @@
                 /* Position image at the top with some padding */
                 background-repeat: no-repeat !important;
             }
-
+            
             .slide__content {
                 height: auto;
                 /* Auto height based on content */
@@ -1290,7 +1281,7 @@
                 /* Dark background for better readability */
                 border-top: 2px solid var(--accent-color);
             }
-
+            
             /* Adjust button positioning for mobile */
             .slide-button {
                 width: 16%;
@@ -1301,75 +1292,75 @@
                 bottom: 10px;
                 /* Move buttons up from the bottom */
             }
-
+            
             .slide-button:nth-child(1) {
                 left: 0%;
             }
-
+            
             .slide-button:nth-child(4) {
                 left: 16.66%;
             }
-
+            
             .slide-button:nth-child(7) {
                 left: 33.33%;
             }
-
+            
             .slide-button:nth-child(10) {
                 left: 50%;
             }
-
+            
             .slide-button:nth-child(13) {
                 left: 66.66%;
             }
-
+            
             .slide-button:nth-child(16) {
                 left: 83.33%;
             }
-
+            
             /* Adjust content styling for mobile */
             .slide__content h3 {
                 font-size: 1.5rem;
                 margin-bottom: 10px;
             }
-
+            
             .slide__content p {
                 font-size: 0.9rem;
                 line-height: 1.4;
                 margin-bottom: 10px;
             }
-
+            
             .slide__content .mt-4 {
                 margin-top: 15px !important;
             }
-
+            
             .slide__content .fs-56 {
                 font-size: 36px !important;
             }
-
+            
             /* Fix radio button behavior on mobile */
             input[type="radio"]:checked+.slide {
                 transform: translateX(0);
             }
         }
-
+        
         /* Small mobile devices */
         @media (max-width: 576px) {
             .slideshow {
                 height: 850px;
                 /* Even more height for small devices */
             }
-
+            
             .slide {
                 background-size: 70% auto !important;
                 /* Even smaller image on small devices */
                 background-position: center 80px !important;
             }
-
+            
             .slide__content {
                 top: 300px;
                 /* Adjust content position for small screens */
             }
-
+            
             .slide-button {
                 font-size: 8px;
                 height: 30px;
@@ -1378,7 +1369,7 @@
                 padding: 0;
             }
         }
-
+        
         /* Additional styles for feature cards */
         /* New styles for feature cards that don't conflict with existing styles */
         .feature-card {
@@ -1395,14 +1386,14 @@
             border-left: 3px solid rgba(41, 128, 185, 0.3);
             border-radius: 10px;
         }
-
+        
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             border-left: 3px solid var(--accent-color);
             background: linear-gradient(145deg, #1e2a3a, #2c3e50);
         }
-
+        
         .feature-card h4 {
             color: var(--accent-color);
             margin-top: 15px;
@@ -1410,33 +1401,33 @@
             display: flex;
             align-items: center;
         }
-
+        
         .feature-card p {
             color: #bbb;
             flex-grow: 1;
         }
-
+        
         .feature-card strong {
             color: #fff;
         }
-
+        
         .feature-card .absolute {
             color: rgba(255, 255, 255, 0.7);
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
         }
-
+        
         /* Make all feature cards in a row the same height */
         .feature-row {
             display: flex;
             flex-wrap: wrap;
         }
-
+        
         .feature-row>div {
             display: flex;
         }
-
+        
         /* Responsive adjustments for feature cards */
         @media (max-width: 991px) {
             .feature-card {
@@ -1444,7 +1435,7 @@
                 min-height: 280px;
             }
         }
-
+        
         @media (max-width: 767px) {
             .feature-card {
                 min-height: 0;
@@ -1459,7 +1450,7 @@
             overflow: hidden;
             width: 100%;
         }
-
+        
         .feature-swiper {
             padding: 30px 10px 60px;
             height: auto;
@@ -1467,33 +1458,33 @@
             position: relative;
             width: 100%;
         }
-
+        
         .feature-swiper .swiper-slide {
             height: auto;
             transition: all 0.3s ease;
             opacity: 1;
             display: flex;
         }
-
+        
         .feature-swiper .swiper-slide-active,
         .feature-swiper .swiper-slide-next,
         .feature-swiper .swiper-slide-prev {
             opacity: 1;
             z-index: 2;
         }
-
+        
         /* Ensure smooth looping */
         .feature-swiper .swiper-wrapper {
             transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
             align-items: stretch;
         }
-
+        
         /* Fix for duplicate slides in loop mode */
         .feature-swiper .swiper-slide-duplicate {
             visibility: visible !important;
             opacity: 1;
         }
-
+        
         /* Ensure all cards have consistent styling */
         .feature-card {
             height: 100%;
@@ -1512,14 +1503,14 @@
             padding: 20px;
             position: relative;
         }
-
+        
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             border-left: 3px solid var(--accent-color);
             background: linear-gradient(145deg, #1e2a3a, #2c3e50);
         }
-
+        
         .feature-card .absolute {
             color: rgba(255, 255, 255, 0.7);
             font-size: 24px;
@@ -1529,7 +1520,7 @@
             top: 0;
             right: 0;
         }
-
+        
         .feature-card h4 {
             color: var(--accent-color);
             margin-top: 15px;
@@ -1539,18 +1530,18 @@
             justify-content: center;
             text-align: center;
         }
-
+        
         .feature-card p {
             color: #bbb;
             flex-grow: 1;
             margin-top: 15px;
             text-align: center;
         }
-
+        
         .feature-card strong {
             color: #fff;
         }
-
+        
         .feature-card a {
             display: flex;
             flex-direction: column;
@@ -1558,7 +1549,7 @@
             text-decoration: none;
             margin-bottom: 10px;
         }
-
+        
         /* Fix navigation buttons */
         .feature-swiper .swiper-button-next,
         .feature-swiper .swiper-button-prev {
@@ -1572,26 +1563,26 @@
             height: 40px;
             margin-top: -20px;
         }
-
+        
         .feature-swiper .swiper-button-next:hover,
         .feature-swiper .swiper-button-prev:hover {
             background: rgba(255, 255, 255, 0.3);
         }
-
+        
         .feature-swiper .swiper-button-next:after,
         .feature-swiper .swiper-button-prev:after {
             font-size: 20px;
         }
-
+        
         /* Fix pagination */
         .feature-swiper .swiper-pagination {
             bottom: 10px;
         }
-
+        
         .feature-swiper .swiper-pagination-bullet {
             background: rgba(255, 255, 255, 0.5);
         }
-
+        
         .feature-swiper .swiper-pagination-bullet-active {
             background: var(--accent-color);
         }
@@ -1917,25 +1908,67 @@
         .feature-box {
             padding: 30px;
             background: rgba(255, 255, 255, 0.05);
-            /* Semi-transparent white */
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             height: 100%;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .feature-box h3,
+        .feature-box h4 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffffff;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
         .feature-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .feature-list li {
-            margin-bottom: 20px;
             display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            /* Slightly transparent white */
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+            text-align: justify;
+        }
+
+        .feature-list li i {
+            font-size: 24px;
+            color: #1e88e5;
+            flex-shrink: 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .feature-list li {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+
+            .feature-list li i {
+                margin-bottom: 10px;
+                font-size: 32px;
+            }
+
+            .feature-box {
+                padding: 25px 20px;
+            }
+
+            .feature-box h3,
+            .feature-box h4 {
+                margin-bottom: 20px;
+                font-size: 1.4rem;
+            }
+
+            .feature-list li .feature-content {
+                text-align: center;
+            }
         }
 
         .advantage-card {
@@ -2477,6 +2510,7 @@
         .ag-courses-item_date-box {
             position: relative;
             z-index: 2;
+            text-align: justify;
         }
 
         /* Make sure the hover effect covers the entire card */
@@ -3081,7 +3115,7 @@
         .row {
             border: none !important;
         }
-        
+
         .feature-box {
             border: 1px solid rgba(255, 255, 255, 0.05);
             background: rgba(255, 255, 255, 0.03);
@@ -3090,10 +3124,11 @@
             height: 100%;
         }
 
-        .row, .row * {
+        .row,
+        .row * {
             border: none !important;
         }
-        
+
         .feature-box {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
@@ -3105,6 +3140,676 @@
         .col-lg-6 {
             border: none !important;
         }
+
+        .ag-format-container .subtitle {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important;
+        }
+
+        .ag-format-container .text-center {
+            margin-top: -20px;
+            /* Adjust spacing from top */
+        }
+
+        /* Video Section Styles */
+        .video-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Darker overlay for better text visibility */
+            z-index: 1;
+        }
+
+        .video-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .video-section {
+                height: 100vh;
+                align-items: center;
+            }
+
+            .video-content {
+                padding: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+            }
+
+            .video-content h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .video-content p {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            video {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            .video-content {
+                top: 45%;
+                /* Adjust position slightly up on smaller screens */
+            }
+
+            .video-content h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                margin-bottom: 0.8rem;
+            }
+
+            .video-content p {
+                font-size: 1.1rem;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+
+            .video-overlay {
+                background: rgba(0, 0, 0, 0.7);
+                /* Even darker overlay for smallest screens */
+            }
+        }
+
+        /* Mobile styles (default) */
+        .hero-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding: 1rem;
+            overflow: visible;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            padding: 2rem 1rem;
+        }
+
+        .video-container {
+            width: 85%;
+            margin: 0 auto;
+            order: 1;
+        }
+
+        .hero-video {
+            width: 184%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .text-overlay {
+            width: 100%;
+            order: 2;
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            background: none;
+            margin-top: 2rem;
+            z-index: 2;
+        }
+
+        .text-overlay h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .text-overlay p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .text-overlay div {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #fff;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            .hero-container {
+                height: 100vh;
+                padding: 2rem;
+                overflow: hidden;
+            }
+
+            .content-wrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
+                height: 100%;
+                padding: 0;
+            }
+
+            .video-container {
+                width: 65%;
+                order: 2;
+                margin: 0;
+            }
+
+            .text-overlay {
+                width: 39%;
+                order: 1;
+                text-align: left;
+                padding: 0;
+                margin-top: 0;
+            }
+
+            .text-overlay br {
+                display: none;
+            }
+
+            .text-overlay h1 {
+                font-size: 3.5rem;
+            }
+
+            .text-overlay p {
+                font-size: 1.5rem;
+            }
+
+            .text-overlay div {
+                font-size: 1.2rem;
+            }
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+        .slider-section * {
+            box-sizing: border-box;
+        }
+
+        .slider-section .container {
+            width: 100%;
+            max-width: 800px;
+            max-height: 600px;
+            height: 100%;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .slider-section input[type=radio] {
+            display: none;
+        }
+
+        .slider-section .card {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform .4s ease;
+            cursor: pointer;
+        }
+
+        .slider-section .cards {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .slider-section img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .slider-section #item-1:checked ~ .cards #song-3, 
+        .slider-section #item-2:checked ~ .cards #song-1, 
+        .slider-section #item-3:checked ~ .cards #song-2 {
+            transform: translatex(-40%) scale(.8);
+            opacity: .4;
+            z-index: 0;
+        }
+
+        .slider-section #item-1:checked ~ .cards #song-2, 
+        .slider-section #item-2:checked ~ .cards #song-3, 
+        .slider-section #item-3:checked ~ .cards #song-1 {
+            transform: translatex(40%) scale(.8);
+            opacity: .4;
+            z-index: 0;
+        }
+
+        .slider-section #item-1:checked ~ .cards #song-1, 
+        .slider-section #item-2:checked ~ .cards #song-2, 
+        .slider-section #item-3:checked ~ .cards #song-3 {
+            transform: translatex(0) scale(1);
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slider-section #item-1:checked ~ .cards #song-1 img, 
+        .slider-section #item-2:checked ~ .cards #song-2 img, 
+        .slider-section #item-3:checked ~ .cards #song-3 img {
+            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+        }
+
+        .slider-section .player {
+            background-color: #fff;
+            border-radius: 8px;
+            min-width: 320px;
+            padding: 16px 10px;
+        }
+
+        .slider-section .upper-part {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .slider-section .play-icon { 
+            margin-right: 10px; 
+        }
+
+        .slider-section .song-info {
+            width: calc(100% - 32px);
+            display: block;
+        }
+
+        .slider-section .song-info .title {
+            color: #403d40;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .slider-section .sub-line {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .slider-section .subtitle, 
+        .slider-section .time {
+            font-size: 12px;
+            line-height: 16px;
+            color: #c6c5c6;
+        }
+
+        .slider-section .time {
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        .slider-section .progress-bar {
+            height: 3px;
+            width: 100%;
+            background-color: #e9efff;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .slider-section .progress {
+            display: block;
+            position: relative;
+            width: 60%;
+            height: 100%;
+            background-color: #2992dc;
+            border-radius: 6px;
+        }
+
+        .slider-section .info-area {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 30px;
+            transition: transform .4s ease-in;
+        }
+
+        .slider-section #item-2:checked ~ .player #test {
+            transform: translateY(-40px);
+        }
+
+        .slider-section #item-3:checked ~ .player #test {
+            transform: translateY(-80px);
+        }
+
+        .slider-container {
+            width: 100%;
+            max-width: 1200px;
+            min-height: 800px;  /* Increased height */
+            margin: 0 auto;
+            padding: 60px 0;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .cards {
+            position: relative;
+            width: 100%;
+            height: 700px;  /* Increased height */
+            margin-bottom: 30px;
+        }
+
+        .card {
+            position: absolute;
+            width: 35%;  /* Increased width */
+            height: 650px;  /* Increased height */
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform .4s ease;
+            cursor: pointer;
+        }
+
+        /* Center/Active Slide */
+        #item-1:checked ~ .cards #song-1,
+        #item-2:checked ~ .cards #song-2,
+        #item-3:checked ~ .cards #song-3,
+        #item-4:checked ~ .cards #song-4,
+        #item-5:checked ~ .cards #song-5 {
+            transform: translatex(0) scale(1);
+            opacity: 1;
+            z-index: 5;
+        }
+
+        /* First Left Slide */
+        #item-1:checked ~ .cards #song-5,
+        #item-2:checked ~ .cards #song-1,
+        #item-3:checked ~ .cards #song-2,
+        #item-4:checked ~ .cards #song-3,
+        #item-5:checked ~ .cards #song-4 {
+            transform: translatex(-50%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Left Slide */
+        #item-1:checked ~ .cards #song-4,
+        #item-2:checked ~ .cards #song-5,
+        #item-3:checked ~ .cards #song-1,
+        #item-4:checked ~ .cards #song-2,
+        #item-5:checked ~ .cards #song-3 {
+            transform: translatex(-90%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        /* First Right Slide */
+        #item-1:checked ~ .cards #song-2,
+        #item-2:checked ~ .cards #song-3,
+        #item-3:checked ~ .cards #song-4,
+        #item-4:checked ~ .cards #song-5,
+        #item-5:checked ~ .cards #song-1 {
+            transform: translatex(50%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Right Slide */
+        #item-1:checked ~ .cards #song-3,
+        #item-2:checked ~ .cards #song-4,
+        #item-3:checked ~ .cards #song-5,
+        #item-4:checked ~ .cards #song-1,
+        #item-5:checked ~ .cards #song-2 {
+            transform: translatex(90%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 80%;
+                height: 450px;
+            }
+            
+            /* Adjust mobile transforms for better spacing */
+            #item-1:checked ~ .cards #song-5,
+            #item-2:checked ~ .cards #song-1,
+            #item-3:checked ~ .cards #song-2,
+            #item-4:checked ~ .cards #song-3,
+            #item-5:checked ~ .cards #song-4 {
+                transform: translatex(-40%) scale(0.8);
+            }
+            
+            #item-1:checked ~ .cards #song-2,
+            #item-2:checked ~ .cards #song-3,
+            #item-3:checked ~ .cards #song-4,
+            #item-4:checked ~ .cards #song-5,
+            #item-5:checked ~ .cards #song-1 {
+                transform: translatex(40%) scale(0.8);
+            }
+        }
+
+        .slider-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            padding: 60px 0;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            position: absolute;
+            width: 23%;
+            height: 464px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform .4s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            transform: scale(0.6);
+            opacity: 0.3;
+        }
+
+        /* Center/Active Slide */
+        #item-1:checked ~ .cards #song-1,
+        #item-2:checked ~ .cards #song-2,
+        #item-3:checked ~ .cards #song-3,
+        #item-4:checked ~ .cards #song-4,
+        #item-5:checked ~ .cards #song-5 {
+            transform: translatex(0) scale(1);
+            opacity: 1;
+            z-index: 5;
+        }
+
+        /* First Left Slide */
+        #item-1:checked ~ .cards #song-5,
+        #item-2:checked ~ .cards #song-1,
+        #item-3:checked ~ .cards #song-2,
+        #item-4:checked ~ .cards #song-3,
+        #item-5:checked ~ .cards #song-4 {
+            transform: translatex(-60%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Left Slide */
+        #item-1:checked ~ .cards #song-4,
+        #item-2:checked ~ .cards #song-5,
+        #item-3:checked ~ .cards #song-1,
+        #item-4:checked ~ .cards #song-2,
+        #item-5:checked ~ .cards #song-3 {
+            transform: translatex(-120%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        /* First Right Slide */
+        #item-1:checked ~ .cards #song-2,
+        #item-2:checked ~ .cards #song-3,
+        #item-3:checked ~ .cards #song-4,
+        #item-4:checked ~ .cards #song-5,
+        #item-5:checked ~ .cards #song-1 {
+            transform: translatex(60%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Right Slide */
+        #item-1:checked ~ .cards #song-3,
+        #item-2:checked ~ .cards #song-4,
+        #item-3:checked ~ .cards #song-5,
+        #item-4:checked ~ .cards #song-1,
+        #item-5:checked ~ .cards #song-2 {
+            transform: translatex(120%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 70%;
+                height: 350px;
+            }
+            
+            /* Adjust mobile transforms */
+            #item-1:checked ~ .cards #song-5,
+            #item-2:checked ~ .cards #song-1,
+            #item-3:checked ~ .cards #song-2,
+            #item-4:checked ~ .cards #song-3,
+            #item-5:checked ~ .cards #song-4 {
+                transform: translatex(-30%) scale(0.8);
+            }
+            
+            #item-1:checked ~ .cards #song-2,
+            #item-2:checked ~ .cards #song-3,
+            #item-3:checked ~ .cards #song-4,
+            #item-4:checked ~ .cards #song-5,
+            #item-5:checked ~ .cards #song-1 {
+                transform: translatex(30%) scale(0.8);
+            }
+        }
+        </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.slider-container input[type="radio"]');
+            let currentIndex = 0;
+            let isTransitioning = false;
+
+            function changeSlide(newIndex) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                inputs[newIndex].checked = true;
+                currentIndex = newIndex;
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500); // Match this with CSS transition time
+            }
+
+            // Auto-advance slider every 3 seconds
+            setInterval(() => {
+                if (!isTransitioning) {
+                    const nextIndex = (currentIndex + 1) % inputs.length;
+                    changeSlide(nextIndex);
+                }
+            }, 3000);
+
+            // Manual click handling
+            inputs.forEach((input, index) => {
+                input.addEventListener('change', function() {
+                    if (!isTransitioning) {
+                        changeSlide(index);
+                    }
+                });
+            });
+        });
+        </script>
     </style>
 </head>
 
@@ -3114,7 +3819,7 @@
             <span><a href="#">Scroll to top</a></span>
         </div>
         <div class="scrollbar-v show-on-scroll"></div> -->
-
+        
         <!-- page preloader begin -->
         <div id="de-loader"></div>
         <!-- page preloader close -->
@@ -3148,8 +3853,8 @@
                                 </ul>
                             </div>
                             <div class="de-flex-col">
-                                <div class="menu_side_area">
-                                    <a href="contact.html" class="btn-line">Partner with us</a>
+                                <div class="menu_side_area">          
+                                    <a href="#contact" class="btn-line">Partner with us</a>
                                     <span id="menu-btn"></span>
                                 </div>
                             </div>
@@ -3165,63 +3870,50 @@
 
             <div id="top"></div>
 
-            <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden z-1000">
-                <div class="v-center">
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide">
-                                <div class="swiper-inner">
-                                    <div class="sw-caption">
-                                        <div class="container">
-                                            <div class="row g-4 align-items-center">
-                                                <div class="spacer-double"></div>
-                                                <div class="hero-container">
-                                                    <div class="text-overlay">
-                                                        <h1>GideON</h1>
-                                                        <p>One App • Any Charger • Anywhere</p>
-                                                        <div>Find, book, charge and pay for EV charging <br> Unifying
-                                                            all major
-                                                            networks in one seamless app.</div>
-                                                        <!-- <div>Revolutionizing EV Charging Infrastructure</div> -->
-                                                    </div>
-                                                    <div class="video-container">
-                                                        <video id="hero-video" autoplay muted class="hero-video"
-                                                            onended="handleVideoEnd()">
-                                                            <source src="./images/video/1.mp4" type="video/mp4">
-                                                            Your browser does not support the video tag.
-                                                        </video>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+            <section class="section-dark text-light no-top no-bottom position-relative overflow-visible z-1000" style="min-height: 100vh; height: auto;">
+                <div class="v-center" style="height: auto; min-height: 100vh;">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="swiper-inner">
+                          <div class="sw-caption">
+                            <div class="container">
+                              <div class="row g-4 align-items-center">
+                                <div class="spacer-double"></div>
+                                                <div class="hero-container" style="height: auto; min-height: 100vh;">
+                                                    <div class="content-wrapper">
+                                    <div class="text-overlay">
+                                                            <h1>GideON</h1>
+                                                            <p>One App • Any Charger • Anywhere</p>
+                                                            <div style="margin-bottom: 2rem;">Find, book, charge and pay for EV charging. <br> Unifying all major networks in one seamless app.</div>
                                     </div>
+                                                        <div class="video-container">
+                                                            <video id="hero-video" autoplay muted class="hero-video">
+                                        <source src="./images/video/1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
+                              </div>
                             </div>
-                            <!-- Slides -->
+                          </div>
                         </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                        <!-- If we need scrollbar -->
-                        <div class="swiper-scrollbar"></div>
+                      </div>
                     </div>
+                            </div>
+                        </div>
+                  </div>
                 </div>
-            </section>
-
-            <!-- New About Us Section -->
+              </section>
+              
+              <!-- New About Us Section -->
             <section id="about" class="about-section position-relative overflow-hidden">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6">
-                            <div class="about-content pe-lg-5">
+                  <div class="container">
+                      <div class="row align-items-center">
+                          <div class="col-lg-6">
+                              <div class="about-content pe-lg-5">
                                 <div class="subtitle bg-grey text-dark  fadeInUp mb-3">About GideON</div>
                                 <h3 class="wow fadeInUp mb-4">Revolutionizing EV Charging Infrastructure</h3>
-                                <p class="wow fadeInUp" data-wow-delay=".2s">
+                                  <p class="wow fadeInUp" data-wow-delay=".2s" style=" text-align: justify;">
                                     We unify fragmented EV charging networks into a seamless, all-in-one platform for
                                     individuals, fleets, and businesses. Our app allows users to locate, book, and pay
                                     for charging effortlessly, with real-time availability and transparent pricing at
@@ -3231,55 +3923,57 @@
                                     operators, delivering maximum reliability and a hassle-free experience. From smart
                                     charging solutions to data-driven insights, we empower a smarter, more efficient,
                                     and future-ready EV ecosystem.
-                                </p>
-                                <div class="spacer-20"></div>
-
-                                <!-- Stats in About Section -->
-                                <div class="row g-4">
-                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
-                                        <div class="about-stat">
+                                  </p>
+                                  <div class="spacer-20"></div>
+                                  
+                                  <!-- Stats in About Section -->
+                                  <div class="row g-4">
+                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
+                                          <div class="about-stat">
                                             <h3 class="mb-1"><span class="counter">10</span>+</h3>
                                             <p class="mb-0">Partnered Charging Networks</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="about-stat">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
+                                          <div class="about-stat">
                                             <h3 class="mb-1"><span class="counter">500</span>+</h3>
                                             <p class="mb-0">Early Access Users</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
-                                        <div class="about-stat">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
+                                          <div class="about-stat">
                                             <h3 class="mb-1"><span class="counter">100</span>%</h3>
                                             <p class="mb-0">Commitment to Seamless EV Charging</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                          </div>
+                                      </div>
+                                  </div>
 
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="about-image-wrapper wow fadeInRight" data-wow-delay=".5s">
-                                <div class="about-image-main position-relative">
-                                    <img src="images/misc/about-main.webp" class="img-fluid rounded-20"
-                                        alt="About GideON">
-                                    <div class="about-floating-card wow fadeInUp" data-wow-delay=".7s">
-                                        <div class="card-icon">
-                                            <i class="icofont-charging-station"></i>
-                                        </div>
-                                        <div class="card-content">
-                                            <h4>500+</h4>
-                                            <p>Charging Stations</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+                              </div>
+                          </div>
+                          
+                          <div class="col-lg-6">
+                              <div class="about-image-wrapper wow fadeInRight" data-wow-delay=".5s">
+                                  <div class="about-image-main position-relative">
+                                    <video id="hero-video" autoplay muted class="hero-video">
+                                        <source src="./images/video/1.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                      <div class="about-floating-card wow fadeInUp" data-wow-delay=".7s">
+                                          <div class="card-icon">
+                                              <i class="icofont-charging-station"></i>
+                                          </div>
+                                          <div class="card-content">
+                                              <h4>500+</h4>
+                                              <p>Charging Stations</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+              
             <!-- Vision Section -->
             <section class="section-dark text-light position-relative overflow-hidden">
                 <div class="container">
@@ -3287,7 +3981,7 @@
                         <div class="col-lg-8">
                             <div class="vision-content wow fadeInUp">
                                 <h2 class="title mb-4">Our Vision</h2>
-                                <p class="vision-text">
+                                <p class="vision-text" style=" text-align: justify;">
                                     "We envision a future where EV charging is seamless, intelligent, and universally
                                     accessible. By integrating all charging networks into one platform, GideON is
                                     building India's most reliable and user-friendly EV charging ecosystem—eliminating
@@ -3298,74 +3992,59 @@
                     </div>
                 </div>
             </section>
-            <!-- Slideshow Section -->
-            <section class="key-features-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Why GideON?</div>
-                            <h2 class="wow fadeInUp mb-4">Revolutionizing EV Charging</h2>
+            
+        <!-- Image Slider Section -->
+        <section class="section-dark text-light no-top no-bottom position-relative overflow-hidden">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="slider-container">
+                            <input type="radio" name="slider" id="item-1" checked>
+                            <input type="radio" name="slider" id="item-2">
+                            <input type="radio" name="slider" id="item-3">
+                            <input type="radio" name="slider" id="item-4">
+                            <input type="radio" name="slider" id="item-5">
+                            <div class="cards">
+                                <label class="card" for="item-1" id="song-1">
+                                    <img src="images/screen.png" alt="GideON App Screen">
+                                </label>
+                                <label class="card" for="item-2" id="song-2">
+                                    <img src="images/screen.png" alt="GideON App Screen">
+                                </label>
+                                <label class="card" for="item-3" id="song-3">
+                                    <img src="images/screen.png" alt="GideON App Screen">
+                                </label>
+                                <label class="card" for="item-4" id="song-4">
+                                    <img src="images/screen.png" alt="GideON App Screen">
+                                </label>
+                                <label class="card" for="item-5" id="song-5">
+                                    <img src="images/screen.png" alt="GideON App Screen">
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <fieldset class="slideshow">
-                                <!-- Navigation Buttons -->
-                                <div class="slide-buttons">
-                                    <label class="slide-button" for="slideCheckbox1">
-                                        <span>Unified Platform</span>
-                                    </label>
-                                    <label class="slide-button" for="slideCheckbox2">
-                                        <span>Smart Payment</span>
-                                    </label>
-                                    <label class="slide-button" for="slideCheckbox3">
-                                        <span>Real Time</span>
-                                    </label>
-                                </div>
+                </div>
+            </div>
+        </section>
 
-                                <!-- Slide 1 Content -->
-                                <input type="radio" id="slideCheckbox1" name="slide" checked>
-                                <div class="slide">
-                                    <div class="slide__content">
-                                        <h3>One Platform for All EV Charging</h3>
-                                        <p>Access any charging network seamlessly.</p>
-                                        <p>Unified experience across all networks!</p>
-                                        <div class="mt-4">
-                                            <i
-                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-connection"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 2 Content -->
-                                <input type="radio" id="slideCheckbox2" name="slide">
-                                <div class="slide">
-                                    <div class="slide__content">
-                                        <h3>Seamless Payment Solutions</h3>
-                                        <p>Multiple payment options including UPI, cards & wallets.</p>
-                                        <p>One-click payments for faster charging.</p>
-                                        <div class="mt-4">
-                                            <i
-                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-wallet"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 3 Content -->
-                                <input type="radio" id="slideCheckbox3" name="slide">
-                                <div class="slide">
-                                    <div class="slide__content">
-                                        <h3>Live Status Updates</h3>
-                                        <p>Real-time availability and status tracking.</p>
-                                        <p>Find the nearest available charger instantly.</p>
-                                        <div class="mt-4">
-                                            <i
-                                                class="bg-accent text-light p-3 rounded-20 fs-56 mb-4 icofont-location-pin"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
+              <!-- Slideshow Section -->
+              <section class="key-features-section">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12">
+                            <!-- <h2 class="wow fadeInUp mb-4">Revolutionizing EV Charging</h2> -->
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-lg-12">
+                            
                             <div class="ag-format-container">
+                                <!-- Add title inside container -->
+                                <div class="text-center mb-5">
+                                    <div class="subtitle bg-grey text-dark  fadeInUp " style="font-size: 2rem;">Why
+                                        GideON?</div>
+                                  </div>
+
                                 <div class="ag-courses_box">
                                     <!-- Card 1 -->
                                     <div class="ag-courses_item">
@@ -3373,14 +4052,14 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Any Charger network, only One App
-                                            </div>
+                                         </div>
                                             <div class="ag-courses-item_date-box">
                                                 No more switching between multiple apps to find and use chargers. GideON
                                                 integrates all major EV charging networks into a single platform for
                                                 easy access.
-                                            </div>
+                                      </div> 
                                         </a>
-                                    </div>
+                                  </div>
 
                                     <!-- Card 2 -->
                                     <div class="ag-courses_item">
@@ -3388,14 +4067,14 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Seamless Network Integration
-                                            </div>
+                                         </div>
                                             <div class="ag-courses-item_date-box">
                                                 We bring together all OEMs and charging providers under one umbrella.
                                                 Users can charge at any station without worrying about compatibility
                                                 issues.
-                                            </div>
+                                      </div>  
                                         </a>
-                                    </div>
+                                  </div>
 
                                     <!-- Card 3 -->
                                     <div class="ag-courses_item">
@@ -3403,14 +4082,14 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Unified Wallet
-                                            </div>
+                                         </div>
                                             <div class="ag-courses-item_date-box">
                                                 Instead of keeping money locked in separate apps, GideON provides one
                                                 wallet for all transactions. Users can track, manage, and spend their
                                                 balance efficiently across all networks.
-                                            </div>
+                                      </div>   
                                         </a>
-                                    </div>
+                                  </div>
 
                                     <!-- Card 4 -->
                                     <div class="ag-courses_item">
@@ -3418,13 +4097,13 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Multiple Payment Options
-                                            </div>
+                                         </div>
                                             <div class="ag-courses-item_date-box">
                                                 GideON ensures flexible, secure payments with no limits. Users pay
                                                 seamlessly via UPI, cards, or wallets—no forced top-ups or restrictions.
-                                            </div>
+                                      </div>  
                                         </a>
-                                    </div>
+                                  </div>
 
                                     <!-- Card 5 -->
                                     <div class="ag-courses_item">
@@ -3432,14 +4111,14 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Smart Search & Live Availability
-                                            </div>
+                                          </div>
                                             <div class="ag-courses-item_date-box">
                                                 Real-time charger status across OEMs helps users locate available
                                                 stations seamlessly. Intelligent filters across OEMS allow users to
                                                 search by distance, charger type, and price.
-                                            </div>
+                                      </div>  
                                         </a>
-                                    </div>
+                                  </div>
 
                                     <!-- Card 6 -->
                                     <div class="ag-courses_item">
@@ -3447,18 +4126,18 @@
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
                                                 Hassle-Free charger bookings
-                                            </div>
+                        </div>
                                             <div class="ag-courses-item_date-box">
                                                 Users can pre-book charging slots to avoid waiting in line. We can
                                                 switch to nearby charger across OEMS in case of issues. Booking
                                                 reminders ensure users never miss a slot.
-                                            </div>
+                        </div>
                                         </a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
+                                            </div>
+                                        </div>
+                </div>
             </section>
 
 
@@ -3471,7 +4150,7 @@
                             <h3 class="subtitle mb-5">Why Players will Partner With Us</h3>
                         </div>
                     </div>
-
+                    
                     <!-- First Row -->
                     <div class="row mb-5">
                         <!-- Maximize Charger Utilization & Revenue -->
@@ -3481,20 +4160,24 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-chart-growth text-primary me-3"></i>
-                                        More Footfall, More Charging Sessions – GideON's aggregated platform funnels more users to your chargers, ensuring higher utilization.
+                                        More Footfall, More Charging Sessions – GideON's aggregated platform funnels
+                                        more users to your chargers, ensuring higher utilization.
                                     </li>
                                     <li>
                                         <i class="icofont-price text-primary me-3"></i>
-                                        Optimized Pricing with Market Insights – While we never share one provider's data with another, our platform helps you understand overall demand trends, allowing you to adjust pricing smartly.
+                                        Optimized Pricing with Market Insights – While we never share one provider's
+                                        data with another, our platform helps you understand overall demand trends,
+                                        allowing you to adjust pricing smartly.
                                     </li>
                                     <li>
                                         <i class="icofont-money text-primary me-3"></i>
-                                        Higher charger occupancy, more revenue per station, and smarter pricing strategies.
+                                        Higher charger occupancy, more revenue per station, and smarter pricing
+                                        strategies.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-
+                                    </div>
+                                </div>
+                                
                         <!-- Reduce Customer Acquisition Costs -->
                         <div class="col-lg-6 mb-4">
                             <div class="feature-box">
@@ -3502,21 +4185,25 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-users text-primary me-3"></i>
-                                        Instant Access to a Large EV User Base – Instead of spending heavily on marketing your standalone app, your chargers are automatically visible to thousands of EV drivers on GideON.
+                                        Instant Access to a Large EV User Base – Instead of spending heavily on
+                                        marketing your standalone app, your chargers are automatically visible to
+                                        thousands of EV drivers on GideON.
                                     </li>
                                     <li>
-                                        <i class="icofont-brand-windows text-primary me-3"></i>
-                                        Increased Brand Exposure – Users discover your charging stations through our unified platform, meaning you gain new customers without additional marketing costs.
+                                        <i class="icofont-megaphone text-primary me-3"></i>
+                                        Increased Brand Exposure – Users discover your charging stations through our
+                                        unified platform, meaning you gain new customers without additional marketing
+                                        costs.
                                     </li>
                                     <li>
                                         <i class="icofont-money-bag text-primary me-3"></i>
                                         Lower customer acquisition costs and increased bookings without extra ad spend.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-
+                                    </div>
+                                    </div>
+                                </div>
+                                
                     <!-- Second Row -->
                     <div class="row mb-5">
                         <!-- Enhance Customer Experience & Retention -->
@@ -3526,20 +4213,24 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-search-map text-primary me-3"></i>
-                                        Seamless Charger Discovery & Booking – Users can easily find, book, and pay for your chargers without app-hopping, increasing the likelihood of repeat visits.
+                                        Seamless Charger Discovery & Booking – Users can easily find, book, and pay for
+                                        your chargers without app-hopping, increasing the likelihood of repeat visits.
                                     </li>
                                     <li>
                                         <i class="icofont-data text-primary me-3"></i>
-                                        Data-Backed Service Improvements – Without sharing individual network data, GideON provides general industry trends, helping you refine charger availability, session times, and user experience.
+                                        Data-Backed Service Improvements – Without sharing individual network data,
+                                        GideON provides general industry trends, helping you refine charger
+                                        availability, session times, and user experience.
                                     </li>
                                     <li>
                                         <i class="icofont-star text-primary me-3"></i>
-                                        Your Benefit: Happier customers, more repeat users, and improved charger efficiency.
+                                        Happier customers, more repeat users, and improved charger
+                                        efficiency.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-
+                                    </div>
+                                </div>
+                                
                         <!-- Solve the Wallet Fragmentation Problem -->
                         <div class="col-lg-6 mb-4">
                             <div class="feature-box">
@@ -3547,21 +4238,25 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-wallet text-primary me-3"></i>
-                                        One Wallet for All Charging Networks – Users no longer have to maintain separate wallets, making payments across networks seamless and convenient.
+                                        One Wallet for All Charging Networks – Users no longer have to maintain separate
+                                        wallets, making payments across networks seamless and convenient.
                                     </li>
                                     <li>
                                         <i class="icofont-speed-meter text-primary me-3"></i>
-                                        Faster Transactions = More Sessions – A hassle-free payment experience means users are more likely to pick chargers available on GideON over standalone networks.
+                                        Faster Transactions = More Sessions – A hassle-free payment experience means
+                                        users are more likely to pick chargers available on GideON over standalone
+                                        networks.
                                     </li>
                                     <li>
                                         <i class="icofont-check-circled text-primary me-3"></i>
-                                        More completed charging sessions and a frictionless payment experience that keeps customers coming back.
+                                        More completed charging sessions and a frictionless payment experience that
+                                        keeps customers coming back.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-
+                                    </div>
+                                    </div>
+                                </div>
+                                
                     <!-- Third Row -->
                     <div class="row mb-5">
                         <!-- Gain Data-Driven Insights -->
@@ -3571,20 +4266,23 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-chart-histogram text-primary me-3"></i>
-                                        Intelligent Demand Prediction – GideON provides macro-level charging trends to help partners identify high-demand locations and peak usage times.
+                                        Intelligent Demand Prediction – GideON provides macro-level charging trends to
+                                        help partners identify high-demand locations and peak usage times.
                                     </li>
                                     <li>
                                         <i class="icofont-location-pin text-primary me-3"></i>
-                                        Smarter Expansion Planning – Without exposing competitor data, you get industry-wide insights to strategically place new chargers where they'll be most profitable.
+                                        Smarter Expansion Planning – Without exposing competitor data, you get
+                                        industry-wide insights to strategically place new chargers where they'll be most
+                                        profitable.
                                     </li>
                                     <li>
                                         <i class="icofont-chart-line text-primary me-3"></i>
                                         Higher ROI on new charger installations and smarter network expansion.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-
+                                    </div>
+                                </div>
+                                
                         <!-- OEM Integration -->
                         <div class="col-lg-6 mb-4">
                             <div class="feature-box">
@@ -3592,63 +4290,66 @@
                                 <ul class="feature-list">
                                     <li>
                                         <i class="icofont-connection text-primary me-3"></i>
-                                        One Charging Solution for All Networks – GideON enables your customers to access and pay for any charger without worrying about network compatibility.
+                                        One Charging Solution for All Networks – GideON enables your customers to access
+                                        and pay for any charger without worrying about network compatibility.
                                     </li>
                                     <li>
                                         <i class="icofont-car text-primary me-3"></i>
-                                        Embedded Charging for a Better Experience – Integrate real-time charger availability, navigation, and payments into your vehicle's infotainment system.
+                                        Embedded Charging for a Better Experience – Integrate real-time charger
+                                        availability, navigation, and payments into your vehicle's infotainment system.
                                     </li>
                                     <li>
                                         <i class="icofont-badge text-primary me-3"></i>
-                                        A superior EV ownership experience for your customers, increased brand differentiation, and a competitive edge in the growing EV market.
+                                        A superior EV ownership experience for your customers, increased brand
+                                        differentiation, and a competitive edge in the growing EV market.
                                     </li>
                                 </ul>
                             </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>
-
-
-            </div>
-        </div>
-    </div>
     <section class="jarallax bg-dark text-light" style="background-color: #111111;">
         <img src="images/background/gradient-3.webp" class="jarallax-img" alt="">
-        <div class="container">
+                <div class="container">
             <div class="row g-4 gx-5">
                 <div class="col-lg-12 text-center mb-5">
                     <div class="subtitle bg-grey text-dark wow fadeInUp mb-3">Investors</div>
                     <h2 class="wow fadeInUp mb-4">Invest in the future of EV charging</h2>
                     <div class="col-lg-8 mx-auto">
-                        <p class="lead wow fadeInUp mb-4">Invest in GideON, India's fastest-growing EV charging
+                        <p class="lead wow fadeInUp mb-4" style=" text-align: justify;">Invest in GideON, India's fastest-growing EV charging
                             aggregator platform. Our innovative solution is transforming the EV charging
                             landscape by unifying fragmented charging networks into a seamless experience for EV
                             owners.</p>
-                        <p class="wow fadeInUp">With a vision to build a rapidly expanding user base,
+                        <p class="wow fadeInUp" style=" text-align: justify;">With a vision to build a rapidly expanding user base,
                             establishing strategic partnerships with major charging networks, and develop a
                             scalable technology infrastructure, GideON aims to become a compelling investment
                             opportunity in India's booming EV sector. Our data-driven approach and first-mover
                             advantage will position us for exponential growth in this $10B+ market.</p>
-                        <p class="wow fadeInUp mt-4">Join us in building a future where one app connects you to
+                        <p class="wow fadeInUp mt-4"    >Join us in building a future where one app connects you to
                             any charger, anywhere—making EV charging seamless, smart, and accessible.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
 
             <div class="spacer-double"></div>
-        </div>
-    </section>
+                </div>
+            </section>
     <section id="contact" class="py-5">
-        <div class="container">
+                <div class="container">
             <div class="row justify-content-center text-center mb-2 mb-lg-4">
                 <div class="col-lg-8 col-xxl-7">
                     <span class="text-muted">Let's Connect</span>
                     <h2 class="display-5 fw-bold mb-3">Request a Callback</h2>
                     <p class="lead">Have questions about GideON? Fill in your details, and our team will get
                         back to you soon!</p>
-                </div>
-            </div>
+                            </div>
+                        </div>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form>
@@ -3656,104 +4357,90 @@
                             <div class="col-md-4">
                                 <div class="mb-4">
                                     <input class="form-control bg-light" placeholder="Your name" type="text">
-                                </div>
                             </div>
+                        </div>
                             <div class="col-md-4">
                                 <div class="mb-4">
                                     <input class="form-control bg-light" placeholder="Your phone number" type="text">
-                                </div>
                             </div>
+                        </div>
                             <div class="col-md-4">
                                 <div class="d-grid">
                                     <button class="btn btn-primary" type="submit">Submit</button>
-                                </div>
                             </div>
                         </div>
+                    </div>
                     </form>
+                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer begin -->
-    <footer class="section-dark">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-4 col-sm-6">
+            </section>
+        
+        <!-- footer begin -->
+        <footer class="section-dark">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-sm-6">
                     <div id="logo" class="header-dark">
                         <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
                             style="min-height: 60px;">
                     </div>
-                    <div class="spacer-20"></div>
+                        <div class="spacer-20"></div>
                     <p>GideON is revolutionizing EV charging by providing a unified platform that connects all
                         charging networks in one seamless experience. One app, any charger, anywhere—powering
                         the future of electric mobility.</p>
-                    <div class="social-icons mb-sm-30">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="widget">
-                                <h5>Company</h5>
-                                <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="mission.html">Our Mission</a></li>
-                                    <li><a href="careers.html">Careers</a></li>
-                                    <li><a href="partners.html">Partners</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <div class="widget">
-                                <h5>Our Services</h5>
-                                <ul>
-                                    <li><a href="charging-locations.html">Find a Charger</a></li>
-                                    <li><a href="booking.html">Book a Charging Slot</a></li>
-                                    <li><a href="payment.html">Seamless Payments</a></li>
-                                    <li><a href="fleet.html">Fleet Solutions</a></li>
-                                    <li><a href="api.html">API for Businesses</a></li>
-                                </ul>
-                            </div>
+                        <div class="social-icons mb-sm-30">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
-                    <div class="widget">
+                    <div class="col-lg-4 col-sm-12 order-lg-1 order-sm-2">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="widget">
+                                    <h5>Company</h5>
+                                    <ul>                                        
+                                        <li><a href="#about">About Us</a></li>
+                                        <li><a href="#contact">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                        <div class="widget">
 
                         <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Email Us
                         </div>
                         connect@gideon.org.in
-                        <div class="spacer-20"></div>
+                            <div class="spacer-20"></div>
                         <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Call Us</div>
                         +91 9090909090/ +91 9090909090
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="subfooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="de-flex">
-                            <div class="de-flex-col">
-                                Copyright 2025 - GideON
-                            </div>
-                            <ul class="menu-simple">
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="subfooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="de-flex">
+                                <div class="de-flex-col">
+                                Copyright 2025 - GideON
+                                </div>
+                                <ul class="menu-simple">
+                                    <li><a href="#">Terms &amp; Conditions</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </footer> <!-- footer close -->
     </div>
 
@@ -3793,7 +4480,7 @@
                     clickable: true,
                 },
             });
-
+            
             // Initialize the feature slider
             var featureSwiper = new Swiper('.feature-swiper', {
                 slidesPerView: 3,
@@ -3848,53 +4535,53 @@
 
             // Add this to ensure proper initialization
             featureSwiper.update();
-
+            
             // Function to equalize slide heights
             function equalizeSlideHeights() {
                 setTimeout(function () {
                     const slides = document.querySelectorAll('.feature-card');
                     let maxHeight = 0;
-
+                    
                     // Reset heights first
                     slides.forEach(slide => {
                         slide.style.height = 'auto';
                     });
-
+                    
                     // Find max height
                     slides.forEach(slide => {
                         maxHeight = Math.max(maxHeight, slide.offsetHeight);
                     });
-
+                    
                     // Set all slides to max height
                     slides.forEach(slide => {
                         slide.style.height = maxHeight + 'px';
                     });
-
+                    
                     // Update swiper
                     featureSwiper.update();
                 }, 100);
             }
-
+            
             // Ensure autoplay is working by manually starting it after a delay
             setTimeout(function () {
                 if (featureSwiper && featureSwiper.autoplay) {
                     featureSwiper.autoplay.start();
                     console.log('Autoplay started manually');
-
+                    
                     // Update swiper to ensure proper dimensions
                     featureSwiper.update();
                 }
             }, 500);
-
+            
             // Add event listeners to ensure autoplay continues after user interaction
             document.querySelector('.feature-swiper').addEventListener('mouseenter', function () {
                 featureSwiper.autoplay.stop();
             });
-
+            
             document.querySelector('.feature-swiper').addEventListener('mouseleave', function () {
                 featureSwiper.autoplay.start();
             });
-
+            
             // Force update on window resize
             window.addEventListener('resize', function () {
                 equalizeSlideHeights();
@@ -3928,7 +4615,247 @@
         });
     </script>
 
+    <!-- Add this script before the closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all navigation links including hash links
+            const navLinks = document.querySelectorAll('.navbar-nav a[href*="#"]');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
 
+            // Add click event listener to each navigation link
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Close the navbar
+                    if (window.innerWidth < 992) { // Only on mobile devices
+                        // Force collapse the navbar
+                        navbarCollapse.classList.remove('show');
+                        navbarToggler.classList.add('collapsed');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Additional handler for the navbar toggler
+            navbarToggler.addEventListener('click', () => {
+                navbarCollapse.classList.toggle('show');
+                navbarToggler.classList.toggle('collapsed');
+                const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+                navbarToggler.setAttribute('aria-expanded', !isExpanded);
+            });
+        });
+    </script>
+
+    <!-- First, update the navbar button and content with data attributes -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- ... existing navbar content ... -->
+    </div>
+
+    <!-- Remove all previous scripts related to navbar and add this single script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var bsCollapse = new bootstrap.Collapse(document.getElementById('navbarSupportedContent'), {
+                toggle: false
+            });
+
+            // Close mobile menu when clicking any nav link
+            document.querySelectorAll('.navbar-nav a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth < 992) {
+                        bsCollapse.hide();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Add this script before the closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all menu links
+            const menuLinks = document.querySelectorAll('#mainmenu a');
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    // Close mobile menu
+                    const header = document.querySelector('header');
+                    if (header.classList.contains('header-mobile')) {
+                        header.classList.remove('header-mobile');
+                        document.querySelector('.de-menu-mobile').classList.remove('show');
+                        document.querySelector('.de-menu-mobile div').classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+
+        <style>
+        @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+        .slider-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+            padding: 60px 0;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .cards {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card {
+            position: absolute;
+            width: 23%;
+            height: 464px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: transform .4s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            transform: scale(0.6);
+            opacity: 0.3;
+        }
+
+        /* Center/Active Slide */
+        #item-1:checked ~ .cards #song-1,
+        #item-2:checked ~ .cards #song-2,
+        #item-3:checked ~ .cards #song-3,
+        #item-4:checked ~ .cards #song-4,
+        #item-5:checked ~ .cards #song-5 {
+            transform: translatex(0) scale(1);
+            opacity: 1;
+            z-index: 5;
+        }
+
+        /* First Left Slide */
+        #item-1:checked ~ .cards #song-5,
+        #item-2:checked ~ .cards #song-1,
+        #item-3:checked ~ .cards #song-2,
+        #item-4:checked ~ .cards #song-3,
+        #item-5:checked ~ .cards #song-4 {
+            transform: translatex(-60%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Left Slide */
+        #item-1:checked ~ .cards #song-4,
+        #item-2:checked ~ .cards #song-5,
+        #item-3:checked ~ .cards #song-1,
+        #item-4:checked ~ .cards #song-2,
+        #item-5:checked ~ .cards #song-3 {
+            transform: translatex(-120%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        /* First Right Slide */
+        #item-1:checked ~ .cards #song-2,
+        #item-2:checked ~ .cards #song-3,
+        #item-3:checked ~ .cards #song-4,
+        #item-4:checked ~ .cards #song-5,
+        #item-5:checked ~ .cards #song-1 {
+            transform: translatex(60%) scale(0.8);
+            opacity: 0.6;
+            z-index: 4;
+        }
+
+        /* Second Right Slide */
+        #item-1:checked ~ .cards #song-3,
+        #item-2:checked ~ .cards #song-4,
+        #item-3:checked ~ .cards #song-5,
+        #item-4:checked ~ .cards #song-1,
+        #item-5:checked ~ .cards #song-2 {
+            transform: translatex(120%) scale(0.6);
+            opacity: 0.3;
+            z-index: 3;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: 70%;
+                height: 350px;
+            }
+            
+            /* Adjust mobile transforms */
+            #item-1:checked ~ .cards #song-5,
+            #item-2:checked ~ .cards #song-1,
+            #item-3:checked ~ .cards #song-2,
+            #item-4:checked ~ .cards #song-3,
+            #item-5:checked ~ .cards #song-4 {
+                transform: translatex(-30%) scale(0.8);
+            }
+            
+            #item-1:checked ~ .cards #song-2,
+            #item-2:checked ~ .cards #song-3,
+            #item-3:checked ~ .cards #song-4,
+            #item-4:checked ~ .cards #song-5,
+            #item-5:checked ~ .cards #song-1 {
+                transform: translatex(30%) scale(0.8);
+            }
+        }
+        </style>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = document.querySelectorAll('.slider-container input[type="radio"]');
+            let currentIndex = 0;
+            let isTransitioning = false;
+
+            function changeSlide(newIndex) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                inputs[newIndex].checked = true;
+                currentIndex = newIndex;
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500); // Match this with CSS transition time
+            }
+
+            // Auto-advance slider every 3 seconds
+            setInterval(() => {
+                if (!isTransitioning) {
+                    const nextIndex = (currentIndex + 1) % inputs.length;
+                    changeSlide(nextIndex);
+                }
+            }, 3000);
+
+            // Manual click handling
+            inputs.forEach((input, index) => {
+                input.addEventListener('change', function() {
+                    if (!isTransitioning) {
+                        changeSlide(index);
+                    }
+                });
+            });
+        });
+        </script>
 </body>
 
 
