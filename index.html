@@ -356,7 +356,7 @@
         /* Adjust specific text styles for better appearance */
         .text-overlay h1 {
             font-size: 4.5em;
-            font-weight: 800;
+            font-weight: unset;
             /* Extra bold for the main title */
             color: white;
             margin-bottom: 10px;
@@ -2493,14 +2493,18 @@
         .ag-courses-item_bg {
             height: 128px;
             width: 128px;
-            background-color: #1e88e5;
-            /* Changed to match your theme blue */
+            background-color: transparent; /* Changed from #1e88e5 to transparent */
             z-index: 1;
             position: absolute;
             top: -75px;
             right: -75px;
             border-radius: 50%;
             transition: all .5s ease;
+        }
+
+        .ag-courses-item_link:hover .ag-courses-item_bg {
+            transform: scale(10);
+            background-color: #1565c0; /* Keep the blue color for hover */
         }
 
         /* Ensure content stays above the background */
@@ -2525,12 +2529,17 @@
         }
 
         .ag-courses-item_title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 600;
             color: #fff;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.3;
+            padding-right: 15px;
+            hyphens: none;
         }
 
         .ag-courses-item_date-box {
@@ -2542,15 +2551,6 @@
 
         .ag-courses-item_link:hover {
             transform: translateY(-5px);
-        }
-
-        .ag-courses-item_link:hover .ag-courses-item_bg {
-            transform: scale(10);
-            background-color: #1565c0;
-        }
-
-        .ag-courses-item_link:hover .ag-courses-item_date-box {
-            color: rgba(255, 255, 255, 0.9);
         }
 
         @media only screen and (max-width: 979px) {
@@ -3772,44 +3772,68 @@
             }
 
         }
-        </style>
 
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const inputs = document.querySelectorAll('.slider-container input[type="radio"]');
-            let currentIndex = 0;
-            let isTransitioning = false;
-
-            function changeSlide(newIndex) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                inputs[newIndex].checked = true;
-                currentIndex = newIndex;
-                
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 500); // Match this with CSS transition time
+        
+            .mockup-container {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
             }
 
-            // Auto-advance slider every 3 seconds
-            setInterval(() => {
-                if (!isTransitioning) {
-                    const nextIndex = (currentIndex + 1) % inputs.length;
-                    changeSlide(nextIndex);
-                }
-            }, 3000);
+            .screen-image {
+                position: absolute;
+                width: 89.5%;
+                height: 93%;
+                object-fit: cover;
+                border-radius: 42px;
+                z-index: 1;
+                top: 3.5%;
+                left: 5.2%;
+            }
 
-            // Manual click handling
-            inputs.forEach((input, index) => {
-                input.addEventListener('change', function() {
-                    if (!isTransitioning) {
-                        changeSlide(index);
-                    }
-                });
-            });
-        });
-        </script>
+            .frame-image {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                object-fit: contain;
+            }
+
+            .card {
+                position: relative;
+                width: 340px;    /* Increased size */
+                height: 680px;   /* Increased proportionally */
+                margin: 0 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+
+            .cards {
+                position: relative;
+                width: 100%;
+                max-width: 1200px; /* Added max-width for better control */
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+            }
+
+            /* Adjust mobile responsiveness */
+            @media (max-width: 768px) {
+                .card {
+                    width: 280px;
+                    height: 560px;
+                    margin: 0 15px;
+                }
+            }
+        </style>
     </style>
 </head>
 
@@ -3841,8 +3865,8 @@
                                 </div> -->
                                 <!-- logo close -->
                                 <div id="logo" class="header-dark">
-                                    <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
-                                        style="    ">
+                                    <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main">
+                                    
                                 </div>
                             </div>
                             <div class="de-flex-col header-col-mid">
@@ -3929,24 +3953,25 @@
                                   
                                   <!-- Stats in About Section -->
                                   <div class="row g-4">
-                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
-                                          <div class="about-stat">
-                                            <h3 class="mb-1"><span class="counter">10</span>+</h3>
-                                            <p class="mb-0">Partnered Charging Networks</p>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
-                                          <div class="about-stat">
-                                            <h3 class="mb-1"><span class="counter">500</span>+</h3>
-                                            <p class="mb-0">Early Access Users</p>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
-                                          <div class="about-stat">
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="about-stat">
+                                            <h3 class="mb-1"><span class="counter">OCPI</span></h3>
+                                            <p class="mb-0">Multi-Network Integration</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="about-stat">
+                                            <h3 class="mb-1"><span class="counter">OCPP</span></h3>
+                                            <p class="mb-0">Direct Station Connectivity</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 wow fadeInUp" data-wow-delay=".5s">
+                                        <div class="about-stat">
                                             <h3 class="mb-1"><span class="counter">100</span>%</h3>
-                                            <p class="mb-0">Commitment to Seamless EV Charging</p>
-                                          </div>
-                                      </div>
+                                            <p class="mb-0">Unified EV Charging</p>
+                                        </div>
+                                    </div>
+                                                                      
                                   </div>
 
                               </div>
@@ -3955,19 +3980,14 @@
                           <div class="col-lg-6">
                               <div class="about-image-wrapper wow fadeInRight" data-wow-delay=".5s">
                                   <div class="about-image-main position-relative">
-                                    <video id="hero-video" autoplay muted class="hero-video">
-                                        <source src="./images/video/1.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                      <div class="about-floating-card wow fadeInUp" data-wow-delay=".7s">
-                                          <div class="card-icon">
-                                              <i class="icofont-charging-station"></i>
-                                          </div>
-                                          <div class="card-content">
-                                              <h4>500+</h4>
-                                              <p>Charging Stations</p>
-                                          </div>
-                                      </div>
+                                    <img src="./images/screens/about_us.png" alt="About GideON" class="img-fluid" 
+                                        style="width: 120%; 
+                                               max-width: 600px;
+                                               border-radius: 20px; 
+                                               box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                                               margin-left: -10%;
+                                               transform: scale(1.1);
+                                               transition: transform 0.3s ease;">
                                   </div>
                               </div>
                           </div>
@@ -4008,19 +4028,19 @@
                             <input type="radio" name="slider" id="item-5">
                             <div class="cards">
                                 <label class="card" for="item-1" id="song-1">
-                                    <img src="images/screen.png" alt="GideON App Screen">
+                                    <img src="images/screens/1.png" alt="GideON App Screen">
                                 </label>
                                 <label class="card" for="item-2" id="song-2">
-                                    <img src="images/screen.png" alt="GideON App Screen">
+                                    <img src="images/screens/2.png" alt="GideON App Screen">
                                 </label>
                                 <label class="card" for="item-3" id="song-3">
-                                    <img src="images/screen.png" alt="GideON App Screen">
+                                    <img src="images/screens/3.png" alt="GideON App Screen">
                                 </label>
                                 <label class="card" for="item-4" id="song-4">
-                                    <img src="images/screen.png" alt="GideON App Screen">
+                                    <img src="images/screens/4.png" alt="GideON App Screen">
                                 </label>
                                 <label class="card" for="item-5" id="song-5">
-                                    <img src="images/screen.png" alt="GideON App Screen">
+                                    <img src="images/screens/5.png" alt="GideON App Screen">
                                 </label>
                             </div>
                         </div>
@@ -4043,8 +4063,8 @@
                             <div class="ag-format-container">
                                 <!-- Add title inside container -->
                                 <div class="text-center mb-5">
-                                    <div class="subtitle bg-grey text-dark  fadeInUp " style="font-size: 2rem;">Why
-                                        GideON?</div>
+                                    <h2 class="title mb-4">Why
+                                        GideON?</h2>
                                   </div>
 
                                 <div class="ag-courses_box">
@@ -4053,7 +4073,7 @@
                                         <a href="#" class="ag-courses-item_link">
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
-                                                Any Charger network, only One App
+                                                Any Charger network,<br>only One App
                                          </div>
                                             <div class="ag-courses-item_date-box">
                                                 No more switching between multiple apps to find and use chargers. GideON
@@ -4068,7 +4088,7 @@
                                         <a href="#" class="ag-courses-item_link">
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
-                                                Seamless Network Integration
+                                                Seamless Network<br>Integration
                                          </div>
                                             <div class="ag-courses-item_date-box">
                                                 We bring together all OEMs and charging providers under one umbrella.
@@ -4098,7 +4118,7 @@
                                         <a href="#" class="ag-courses-item_link">
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
-                                                Multiple Payment Options
+                                                Multiple Payment<br>Options
                                          </div>
                                             <div class="ag-courses-item_date-box">
                                                 GideON ensures flexible, secure payments with no limits. Users pay
@@ -4112,7 +4132,7 @@
                                         <a href="#" class="ag-courses-item_link">
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
-                                                Smart Search & Live Availability
+                                                Smart Search &<br>Live Availability
                                           </div>
                                             <div class="ag-courses-item_date-box">
                                                 Real-time charger status across OEMs helps users locate available
@@ -4127,7 +4147,7 @@
                                         <a href="#" class="ag-courses-item_link">
                                             <div class="ag-courses-item_bg"></div>
                                             <div class="ag-courses-item_title">
-                                                Hassle-Free charger bookings
+                                                Hassle-Free charger<br>bookings
                         </div>
                                             <div class="ag-courses-item_date-box">
                                                 Users can pre-book charging slots to avoid waiting in line. We can
@@ -4369,7 +4389,9 @@
                         </div>
                             <div class="col-md-4">
                                 <div class="d-grid">
-                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                    <button class="btn btn-primary" type="submit" 
+                                        style="background-color: #0066FF; ">Submit</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4384,100 +4406,52 @@
             <div class="container">
                 <div class="row gx-5">
                     <div class="col-lg-4 col-sm-6">
-                    <div id="logo" class="header-dark">
-                        <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
-                            style="min-height: 60px;">
-                    </div>
+                        <div id="logo" class="header-dark">
+                            <img src="images/GideON-Logo/GideON-Logo-01.png" alt="GideON Logo" class="logo-main"
+                                style="min-height: 60px;">
+                        </div>
                         <div class="spacer-20"></div>
-                    <p>GideON is revolutionizing EV charging by providing a unified platform that connects all
-                        charging networks in one seamless experience. One app, any charger, anywhere—powering
-                        the future of electric mobility.</p>
-                        <div class="social-icons mb-sm-30">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="spacer-double"></div>
-        </div>
-    </section>
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row justify-content-center text-center mb-2 mb-lg-4">
-                <div class="col-lg-8 col-xxl-7">
-                    <span class="text-muted">Let's Connect</span>
-                    <h2 class="display-5 fw-bold mb-3">Request a Callback</h2>
-                    <p class="lead">Have questions about GideON? Fill in your details, and our team will get
-                        back to you soon!</p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form>
-                        <div class="row">
-                          
-                          
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="widget">
-                                    <h5>Company</h5>
-                                    <ul>                                        
-                                        <li><a href="#about">About Us</a></li>
-                                        <li><a href="#contact">Contact</a></li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            
+                        <p>GideON is revolutionizing EV charging by providing a unified platform that connects all
+                            charging networks in one seamless experience. One app, any charger, anywhere—powering
+                            the future of electric mobility.</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 order-lg-2 order-sm-1">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="widget">
-
-                        <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color"></i>Email Us
+                            <h5>Quick Links</h5>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
                         </div>
-                        connect@gideon.org.in
-                            <div class="spacer-20"></div>
-                        <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Call Us</div>
-                        +91 9090909090/ +91 9090909090
-
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="widget">
+                            <h5>Contact Info</h5>
+                            <address class="s1">
+                                <span><i class="id-color fa fa-map-marker fa-lg"></i>Hyderabad, Telangana</span>
+                                <span><i class="id-color fa fa-envelope-o fa-lg"></i><a href="mailto:contact@gideon.co.in">contact@gideon.co.in</a></span>
+                            </address>
                         </div>
-                        connect@gideon.org.in
-                        <div class="spacer-20"></div>
-                        <div class="fw-bold text-white"><i class="icofont-phone me-2 id-color"></i>Call Us</div>
-                        +91 9090909090/ +91 9090909090
                     </div>
                 </div>
             </div>
             <div class="subfooter">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="de-flex">
-                                <div class="de-flex-col">
-                                Copyright 2025 - GideON
-                                </div>
-                                <ul class="menu-simple">
-                                    <li><a href="#">Terms &amp; Conditions</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
-
-                            </div>
-                            <ul class="menu-simple">
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
+                        <div class="col-md-12 text-center">
+                            <span>Copyright © 2024 - GideON</span>
                         </div>
                     </div>
                 </div>
             </div>
-    </footer> <!-- footer close -->
+        </footer> <!-- footer close -->
     </div>
     
 

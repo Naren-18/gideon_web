@@ -14188,7 +14188,7 @@ body.dark-scheme::-webkit-scrollbar-track,
 
 .text-light .card {
   color: #ffffff !important;
-  background: rgba(255, 255, 255, .05);
+  background: none;
 }
 
 
